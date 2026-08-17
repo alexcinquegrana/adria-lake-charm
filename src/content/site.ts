@@ -27,8 +27,8 @@ export const languages: { code: Lang; label: string; full: string }[] = [
 
 export const paths: Record<Lang, Record<PageKey, string>> = {
   it: { home: "/", menu: "/menu", place: "/il-locale", contact: "/contatti" },
-  en: { home: "/en", menu: "/en/menu", place: "/en/the-place", contact: "/en/contact" },
-  de: { home: "/de", menu: "/de/speisekarte", place: "/de/lokal", contact: "/de/kontakt" },
+  en: { home: "/en/", menu: "/en/menu", place: "/en/the-place", contact: "/en/contact" },
+  de: { home: "/de/", menu: "/de/speisekarte", place: "/de/lokal", contact: "/de/kontakt" },
 };
 
 interface Copy {
