@@ -91,10 +91,10 @@ export function HomePage({ lang }: { lang: Lang }) {
 
         <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { src: carbonara.url, caption: c.dishes.captions.carbonara },
-            { src: gnocchetti.url, caption: c.dishes.captions.gnocchetti },
-            { src: verdure.url, caption: c.dishes.captions.verdure },
-            { src: tiramisu.url, caption: c.dishes.captions.tiramisu },
+            { src: carbonara.url, caption: c.dishes.captions["carbonara"]! },
+            { src: gnocchetti.url, caption: c.dishes.captions["gnocchetti"]! },
+            { src: verdure.url, caption: c.dishes.captions["verdure"]! },
+            { src: tiramisu.url, caption: c.dishes.captions["tiramisu"]! },
           ].map((d, i) => (
             <Reveal as="li" key={d.src} delay={i * 80}>
               <img
