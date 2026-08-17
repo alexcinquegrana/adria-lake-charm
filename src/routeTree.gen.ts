@@ -10,33 +10,180 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as IlLocaleRouteImport } from './routes/il-locale'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as DeIndexRouteImport } from './routes/de.index'
+import { Route as DeKontaktRouteImport } from './routes/de.kontakt'
+import { Route as DeLokalRouteImport } from './routes/de.lokal'
+import { Route as DeSpeisekarteRouteImport } from './routes/de.speisekarte'
+import { Route as EnIndexRouteImport } from './routes/en.index'
+import { Route as EnContactRouteImport } from './routes/en.contact'
+import { Route as EnMenuRouteImport } from './routes/en.menu'
+import { Route as EnThePlaceRouteImport } from './routes/en.the-place'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IlLocaleRoute = IlLocaleRouteImport.update({
+  id: '/il-locale',
+  path: '/il-locale',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeIndexRoute = DeIndexRouteImport.update({
+  id: '/de/',
+  path: '/de/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeKontaktRoute = DeKontaktRouteImport.update({
+  id: '/de/kontakt',
+  path: '/de/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeLokalRoute = DeLokalRouteImport.update({
+  id: '/de/lokal',
+  path: '/de/lokal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeSpeisekarteRoute = DeSpeisekarteRouteImport.update({
+  id: '/de/speisekarte',
+  path: '/de/speisekarte',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/en/contact',
+  path: '/en/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnMenuRoute = EnMenuRouteImport.update({
+  id: '/en/menu',
+  path: '/en/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnThePlaceRoute = EnThePlaceRouteImport.update({
+  id: '/en/the-place',
+  path: '/en/the-place',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/il-locale': typeof IlLocaleRoute
+  '/menu': typeof MenuRoute
+  '/de/kontakt': typeof DeKontaktRoute
+  '/de/lokal': typeof DeLokalRoute
+  '/de/speisekarte': typeof DeSpeisekarteRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/menu': typeof EnMenuRoute
+  '/en/the-place': typeof EnThePlaceRoute
+  '/de/': typeof DeIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/il-locale': typeof IlLocaleRoute
+  '/menu': typeof MenuRoute
+  '/de/kontakt': typeof DeKontaktRoute
+  '/de/lokal': typeof DeLokalRoute
+  '/de/speisekarte': typeof DeSpeisekarteRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/menu': typeof EnMenuRoute
+  '/en/the-place': typeof EnThePlaceRoute
+  '/de': typeof DeIndexRoute
+  '/en': typeof EnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contatti': typeof ContattiRoute
+  '/il-locale': typeof IlLocaleRoute
+  '/menu': typeof MenuRoute
+  '/de/kontakt': typeof DeKontaktRoute
+  '/de/lokal': typeof DeLokalRoute
+  '/de/speisekarte': typeof DeSpeisekarteRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/menu': typeof EnMenuRoute
+  '/en/the-place': typeof EnThePlaceRoute
+  '/de/': typeof DeIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contatti'
+    | '/il-locale'
+    | '/menu'
+    | '/de/kontakt'
+    | '/de/lokal'
+    | '/de/speisekarte'
+    | '/en/contact'
+    | '/en/menu'
+    | '/en/the-place'
+    | '/de/'
+    | '/en/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contatti'
+    | '/il-locale'
+    | '/menu'
+    | '/de/kontakt'
+    | '/de/lokal'
+    | '/de/speisekarte'
+    | '/en/contact'
+    | '/en/menu'
+    | '/en/the-place'
+    | '/de'
+    | '/en'
+  id:
+    | '__root__'
+    | '/'
+    | '/contatti'
+    | '/il-locale'
+    | '/menu'
+    | '/de/kontakt'
+    | '/de/lokal'
+    | '/de/speisekarte'
+    | '/en/contact'
+    | '/en/menu'
+    | '/en/the-place'
+    | '/de/'
+    | '/en/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContattiRoute: typeof ContattiRoute
+  IlLocaleRoute: typeof IlLocaleRoute
+  MenuRoute: typeof MenuRoute
+  DeKontaktRoute: typeof DeKontaktRoute
+  DeLokalRoute: typeof DeLokalRoute
+  DeSpeisekarteRoute: typeof DeSpeisekarteRoute
+  EnContactRoute: typeof EnContactRoute
+  EnMenuRoute: typeof EnMenuRoute
+  EnThePlaceRoute: typeof EnThePlaceRoute
+  DeIndexRoute: typeof DeIndexRoute
+  EnIndexRoute: typeof EnIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +195,99 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/il-locale': {
+      id: '/il-locale'
+      path: '/il-locale'
+      fullPath: '/il-locale'
+      preLoaderRoute: typeof IlLocaleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/de/': {
+      id: '/de/'
+      path: '/de'
+      fullPath: '/de/'
+      preLoaderRoute: typeof DeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/de/kontakt': {
+      id: '/de/kontakt'
+      path: '/de/kontakt'
+      fullPath: '/de/kontakt'
+      preLoaderRoute: typeof DeKontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/de/lokal': {
+      id: '/de/lokal'
+      path: '/de/lokal'
+      fullPath: '/de/lokal'
+      preLoaderRoute: typeof DeLokalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/de/speisekarte': {
+      id: '/de/speisekarte'
+      path: '/de/speisekarte'
+      fullPath: '/de/speisekarte'
+      preLoaderRoute: typeof DeSpeisekarteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/en/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/menu': {
+      id: '/en/menu'
+      path: '/en/menu'
+      fullPath: '/en/menu'
+      preLoaderRoute: typeof EnMenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/the-place': {
+      id: '/en/the-place'
+      path: '/en/the-place'
+      fullPath: '/en/the-place'
+      preLoaderRoute: typeof EnThePlaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContattiRoute: ContattiRoute,
+  IlLocaleRoute: IlLocaleRoute,
+  MenuRoute: MenuRoute,
+  DeKontaktRoute: DeKontaktRoute,
+  DeLokalRoute: DeLokalRoute,
+  DeSpeisekarteRoute: DeSpeisekarteRoute,
+  EnContactRoute: EnContactRoute,
+  EnMenuRoute: EnMenuRoute,
+  EnThePlaceRoute: EnThePlaceRoute,
+  DeIndexRoute: DeIndexRoute,
+  EnIndexRoute: EnIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
