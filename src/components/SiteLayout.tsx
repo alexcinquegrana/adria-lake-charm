@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import type { Lang } from "@/content/menu";
-import { copy, languages, paths, restaurant, type PageKey } from "@/content/site";
+import { copy, languages, paths, restaurant, whatsappHref, type PageKey } from "@/content/site";
+import { Logo } from "./Logo";
 
 export function SiteLayout({
   lang,
@@ -14,30 +15,53 @@ export function SiteLayout({
 }) {
   const c = copy[lang];
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const nav: PageKey[] = ["menu", "place", "contact"];
+  const wa = whatsappHref(lang);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="grain min-h-screen bg-background text-foreground">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-4">
         {c.skipToContent}
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur">
+      <header
+        className={`sticky top-0 z-40 border-b transition-all duration-500 ${
+          scrolled
+            ? "border-primary/30 bg-background/92 backdrop-blur-md"
+            : "border-transparent bg-background/40 backdrop-blur-sm"
+        }`}
+      >
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
-          <Link to={paths[lang].home} className="font-display text-lg leading-none tracking-tight">
-            Adria<span className="text-primary">.</span>
-            <span className="block text-[0.6rem] uppercase tracking-[0.24em] text-muted-foreground">
-              da Kevin
+          <Link
+            to={paths[lang].home}
+            className="flex items-center gap-3 text-primary transition-opacity hover:opacity-85"
+          >
+            <Logo className="h-10 w-10" />
+            <span className="leading-none">
+              <span className="block font-display text-lg tracking-tight text-foreground">
+                Adria
+              </span>
+              <span className="block text-[0.58rem] uppercase tracking-[0.28em] text-primary">
+                da Kevin
+              </span>
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center gap-6 text-sm md:flex">
+          <nav className="ml-auto hidden items-center gap-7 text-xs uppercase tracking-[0.2em] md:flex">
             {nav.map((k) => (
               <Link
                 key={k}
                 to={paths[lang][k]}
                 activeProps={{ className: "text-primary" }}
-                className="transition-colors hover:text-primary"
+                className="link-gold text-foreground/85 hover:text-primary"
               >
                 {c.nav[k]}
               </Link>
@@ -54,8 +78,8 @@ export function SiteLayout({
                     aria-current={l.code === lang ? "true" : undefined}
                     className={`rounded px-1.5 py-1 tracking-widest transition-colors ${
                       l.code === lang
-                        ? "text-foreground underline underline-offset-4"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "text-primary underline underline-offset-4"
+                        : "text-foreground/60 hover:text-foreground"
                     }`}
                   >
                     {l.label}
@@ -64,7 +88,9 @@ export function SiteLayout({
               ))}
             </ul>
             <a
-              href={restaurant.phoneHref}
+              href={wa}
+              target="_blank"
+              rel="noreferrer"
               className="hidden rounded-full bg-primary px-4 py-2 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-90 sm:inline-block"
             >
               {c.callNow}
@@ -73,16 +99,17 @@ export function SiteLayout({
               type="button"
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
-              className="md:hidden rounded border border-border px-2 py-1 text-xs uppercase tracking-widest"
+              aria-label={c.nav.menu}
+              className="rounded-full border border-primary/50 px-3 py-2 text-xs uppercase tracking-widest text-primary md:hidden"
             >
-              {c.nav.menu}
+              {open ? "×" : "≡"}
             </button>
           </div>
         </div>
 
         {open && (
-          <nav className="border-t border-border/60 bg-background px-5 py-3 md:hidden">
-            <ul className="flex flex-col gap-3 text-sm">
+          <nav className="border-t border-primary/25 bg-background px-5 py-4 md:hidden">
+            <ul className="flex flex-col gap-4 font-display text-2xl">
               {nav.map((k) => (
                 <li key={k}>
                   <Link to={paths[lang][k]} onClick={() => setOpen(false)}>
@@ -97,46 +124,60 @@ export function SiteLayout({
 
       <main id="main">{children}</main>
 
-      <footer className="mt-24 border-t border-border/60 bg-secondary/40">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:grid-cols-3">
+      <footer className="mt-24 border-t border-primary/25 bg-secondary">
+        <div className="mx-auto max-w-6xl px-5 pt-16">
+          <div className="wave-rule" aria-hidden="true" />
+        </div>
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-3">
           <div>
-            <p className="font-display text-2xl">{restaurant.name}</p>
-            <p className="mt-2 text-sm text-muted-foreground">{c.footer.tagline}</p>
+            <Logo variant="full" className="h-28 w-auto text-primary" />
+            <p className="mt-4 text-sm text-foreground/70">{c.footer.tagline}</p>
           </div>
           <address className="not-italic text-sm leading-relaxed">
             {restaurant.street}
             <br />
             {restaurant.postalCode} {restaurant.city} ({restaurant.province})
             <br />
-            <a href={restaurant.phoneHref} className="text-primary hover:underline">
+            <a href={restaurant.phoneHref} className="link-gold">
               {restaurant.phone}
             </a>
+            <br />
+            <a href={wa} target="_blank" rel="noreferrer" className="link-gold">
+              WhatsApp
+            </a>
           </address>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-3 text-xs uppercase tracking-[0.2em]">
             {nav.map((k) => (
               <li key={k}>
-                <Link to={paths[lang][k]} className="hover:text-primary">
+                <Link to={paths[lang][k]} className="link-gold text-foreground/85">
                   {c.nav[k]}
                 </Link>
               </li>
             ))}
             <li>
-              <a href={restaurant.maps} target="_blank" rel="noreferrer" className="hover:text-primary">
+              <a
+                href={restaurant.maps}
+                target="_blank"
+                rel="noreferrer"
+                className="link-gold text-foreground/85"
+              >
                 {c.visit.directions}
               </a>
             </li>
           </ul>
         </div>
-        <div className="border-t border-border/60 px-5 py-5 text-center text-xs text-muted-foreground">
+        <div className="border-t border-primary/20 px-5 py-5 text-center text-[0.7rem] uppercase tracking-[0.24em] text-foreground/55">
           © {new Date().getFullYear()} {restaurant.name} — {c.footer.rights}
         </div>
       </footer>
 
       <a
-        href={restaurant.phoneHref}
+        href={wa}
+        target="_blank"
+        rel="noreferrer"
         className="fixed inset-x-4 bottom-4 z-40 rounded-full bg-primary px-5 py-3 text-center text-sm font-medium uppercase tracking-widest text-primary-foreground shadow-lg sm:hidden"
       >
-        {c.callNow} · {restaurant.phone}
+        {c.callNow}
       </a>
     </div>
   );
