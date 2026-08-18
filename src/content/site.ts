@@ -17,7 +17,20 @@ export const restaurant = {
   lng: 10.5636,
   maps: "https://www.google.com/maps/search/?api=1&query=Trattoria+Adria+Via+Caduti+13+Gardone+Riviera",
   servesCuisine: ["Italiana", "Pizza", "Pesce di lago"],
+  whatsapp: "393927888456",
+  mapsEmbed:
+    "https://www.google.com/maps?q=Trattoria+Adria+da+Kevin,+Via+Caduti+13,+25083+Gardone+Riviera+BS&output=embed",
 };
+
+const whatsappMessage: Record<Lang, string> = {
+  it: "Ciao Kevin, vorrei prenotare un tavolo il…",
+  en: "Hi Kevin, I'd like to book a table on…",
+  de: "Hallo Kevin, ich möchte einen Tisch reservieren am…",
+};
+
+export function whatsappHref(lang: Lang) {
+  return `https://wa.me/${restaurant.whatsapp}?text=${encodeURIComponent(whatsappMessage[lang])}`;
+}
 
 export const languages: { code: Lang; label: string; full: string }[] = [
   { code: "it", label: "IT", full: "Italiano" },
@@ -100,8 +113,8 @@ export const copy: Record<Lang, Copy> = {
   it: {
     htmlLang: "it",
     nav: { home: "Casa", menu: "Menù", place: "Il locale", contact: "Dove siamo" },
-    callNow: "Chiama e prenota",
-    bookByPhone: "Prenotazioni al telefono",
+    callNow: "Prenota su WhatsApp",
+    bookByPhone: "Scrivici su WhatsApp o chiamaci",
     skipToContent: "Vai al contenuto",
     hero: {
       place: "Gardone Riviera · Lago di Garda",
@@ -234,8 +247,8 @@ export const copy: Record<Lang, Copy> = {
   en: {
     htmlLang: "en",
     nav: { home: "Home", menu: "Menu", place: "The place", contact: "Find us" },
-    callNow: "Call to book",
-    bookByPhone: "Bookings by phone",
+    callNow: "Book on WhatsApp",
+    bookByPhone: "Message us on WhatsApp or call",
     skipToContent: "Skip to content",
     hero: {
       place: "Gardone Riviera · Lake Garda",
@@ -368,8 +381,8 @@ export const copy: Record<Lang, Copy> = {
   de: {
     htmlLang: "de",
     nav: { home: "Start", menu: "Speisekarte", place: "Das Lokal", contact: "Anfahrt" },
-    callNow: "Anrufen & reservieren",
-    bookByPhone: "Reservierung per Telefon",
+    callNow: "Per WhatsApp reservieren",
+    bookByPhone: "Schreiben Sie uns auf WhatsApp oder rufen Sie an",
     skipToContent: "Zum Inhalt springen",
     hero: {
       place: "Gardone Riviera · Gardasee",
