@@ -38,11 +38,14 @@
   --color-ring: var(--ring);
   --color-ochre: var(--ochre);
   --color-ochre-soft: var(--ochre-soft);
+  --color-gold: var(--ochre);
   --color-lake: var(--lake);
   --color-lake-deep: var(--lake-deep);
   --color-paper: var(--paper);
   --color-paper-deep: var(--paper-deep);
   --color-ink: var(--ink);
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
   --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
   --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
 }
@@ -50,34 +53,39 @@
 :root {
   --radius: 0.25rem;
 
-  --paper: oklch(0.972 0.019 88);
-  --paper-deep: oklch(0.938 0.032 84);
-  --ink: oklch(0.245 0.028 60);
-  --ochre: oklch(0.79 0.132 78);
-  --ochre-soft: oklch(0.9 0.07 85);
-  --lake: oklch(0.55 0.058 195);
+  /* Inverted palette: deep sign red ground, warm white type, gold detail. */
+  --wine: oklch(0.318 0.116 26);
+  --wine-deep: oklch(0.238 0.093 26);
+  --wine-soft: oklch(0.378 0.121 27);
+  --paper: oklch(0.968 0.019 86);
+  --paper-deep: oklch(0.9 0.03 84);
+  --ink: oklch(0.185 0.07 26);
+  --ochre: oklch(0.836 0.146 84);
+  --ochre-soft: oklch(0.905 0.083 88);
+  --lake: oklch(0.62 0.058 195);
   --lake-deep: oklch(0.36 0.05 200);
 
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --card: oklch(0.99 0.012 88);
-  --card-foreground: var(--ink);
-  --popover: oklch(0.99 0.012 88);
-  --popover-foreground: var(--ink);
-  --primary: oklch(0.402 0.128 27);
-  --primary-foreground: oklch(0.98 0.015 88);
-  --secondary: var(--paper-deep);
-  --secondary-foreground: var(--ink);
-  --muted: var(--paper-deep);
-  --muted-foreground: oklch(0.48 0.026 62);
+  --background: var(--wine);
+  --foreground: var(--paper);
+  --card: var(--wine-deep);
+  --card-foreground: var(--paper);
+  --popover: var(--wine-deep);
+  --popover-foreground: var(--paper);
+  --primary: var(--ochre);
+  --primary-foreground: oklch(0.235 0.09 26);
+  --secondary: var(--wine-deep);
+  --secondary-foreground: var(--paper);
+  --muted: var(--wine-deep);
+  --muted-foreground: oklch(0.845 0.031 70);
   --accent: var(--ochre);
-  --accent-foreground: oklch(0.25 0.04 60);
-  --destructive: oklch(0.505 0.19 27);
-  --destructive-foreground: oklch(0.98 0.015 88);
-  --border: oklch(0.874 0.028 82);
-  --input: oklch(0.874 0.028 82);
-  --ring: oklch(0.402 0.128 27);
+  --accent-foreground: oklch(0.235 0.09 26);
+  --destructive: oklch(0.62 0.19 27);
+  --destructive-foreground: var(--paper);
+  --border: color-mix(in oklab, var(--ochre) 30%, transparent);
+  --input: color-mix(in oklab, var(--ochre) 34%, transparent);
+  --ring: var(--ochre);
 }
+
 
 @layer base {
   * {
