@@ -142,8 +142,72 @@
 
 @utility rule-dotted {
   flex: 1;
-  border-bottom: 1px dotted color-mix(in oklab, var(--ink) 35%, transparent);
+  border-bottom: 1px dotted color-mix(in oklab, var(--ochre) 55%, transparent);
   margin-bottom: 0.32rem;
+}
+
+/* Fine print grain over the red ground. */
+@utility grain {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.55;
+    background-image:
+      radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--ochre) 16%, transparent) 1px, transparent 0);
+    background-size: 4px 4px;
+  }
+}
+
+/* Gold hairline frame used on photography. */
+@utility gilt {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--ochre) 45%, transparent),
+    0 24px 60px -30px oklch(0 0 0 / 0.9);
+}
+
+@utility link-gold {
+  position: relative;
+  color: var(--ochre);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--ochre);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Repeating lake-wave divider. */
+@utility wave-rule {
+  height: 12px;
+  width: 100%;
+  opacity: 0.55;
+  background-repeat: repeat-x;
+  background-size: 24px 12px;
+  background-image: radial-gradient(
+    circle at 12px 14px,
+    transparent 8px,
+    color-mix(in oklab, var(--ochre) 70%, transparent) 8px,
+    color-mix(in oklab, var(--ochre) 70%, transparent) 9px,
+    transparent 9px
+  );
 }
 
 @utility reveal {
@@ -159,6 +223,53 @@
   }
 }
 
+/* Curtain reveal: content rises from behind a mask. */
+@utility mask-rise {
+  overflow: hidden;
+  display: block;
+
+  & > * {
+    display: block;
+    transform: translateY(105%);
+    transition: transform 1.05s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &[data-visible="true"] > * {
+    transform: none;
+  }
+}
+
+@utility veil {
+  animation: veil-lift 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes veil-lift {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@utility marquee-track {
+  animation: marquee 46s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -168,4 +279,17 @@
     transform: none;
     transition: none;
   }
+  .mask-rise > * {
+    transform: none;
+    transition: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .veil {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
+
