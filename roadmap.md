@@ -1,0 +1,1 @@
+- [ ] Aggiornare le fotografie della home secondo il piano approvato
