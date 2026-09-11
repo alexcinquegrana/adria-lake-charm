@@ -149,7 +149,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               as="li"
               key={d.src}
               delay={i * 90}
-              className={i % 2 === 1 ? "sm:mt-24" : undefined}
+              className={i % 2 === 1 ? "sm:mt-24" : ""}
             >
               <div className="relative">
                 <img
