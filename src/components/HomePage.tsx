@@ -5,20 +5,21 @@ import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 import facciata from "@/assets/facciata.jpg.asset.json";
 import frutti from "@/assets/frutti-di-mare.jpg.asset.json";
-import carbonara from "@/assets/carbonara.jpg.asset.json";
-import gnocchetti from "@/assets/gnocchetti.jpg.asset.json";
+import pastaVino from "@/assets/pasta-vino.jpeg.asset.json";
+import frittoCalamari from "@/assets/fritto-calamari.jpeg.asset.json";
 import verdure from "@/assets/verdure-griglia.jpg.asset.json";
-import tiramisu from "@/assets/tiramisu.jpg.asset.json";
+import coppaGelato from "@/assets/coppa-gelato.jpeg.asset.json";
+import crostataCaffe from "@/assets/crostata-caffe.jpeg.asset.json";
 
 export function HomePage({ lang }: { lang: Lang }) {
   const c = copy[lang];
   const wa = whatsappHref(lang);
 
   const dishes = [
-    { src: carbonara.url, caption: c.dishes.captions["carbonara"]!, n: "01" },
-    { src: gnocchetti.url, caption: c.dishes.captions["gnocchetti"]!, n: "02" },
-    { src: verdure.url, caption: c.dishes.captions["verdure"]!, n: "03" },
-    { src: tiramisu.url, caption: c.dishes.captions["tiramisu"]!, n: "04" },
+    { src: pastaVino.url, caption: c.dishes.captions["carbonara"]!, n: "01", position: "object-[center_58%]" },
+    { src: frittoCalamari.url, caption: c.dishes.captions["gnocchetti"]!, n: "02", position: "object-[center_56%]" },
+    { src: verdure.url, caption: c.dishes.captions["verdure"]!, n: "03", position: "object-center" },
+    { src: coppaGelato.url, caption: c.dishes.captions["tiramisu"]!, n: "04", position: "object-[center_48%]" },
   ];
 
   const marquee = [
@@ -148,14 +149,14 @@ export function HomePage({ lang }: { lang: Lang }) {
               as="li"
               key={d.src}
               delay={i * 90}
-              className={i % 2 === 1 ? "sm:mt-24" : undefined}
+              className={i % 2 === 1 ? "sm:mt-24" : ""}
             >
               <div className="relative">
                 <img
                   src={d.src}
                   alt={d.caption}
                   loading="lazy"
-                  className={`gilt w-full rounded-sm object-cover ${
+                  className={`gilt w-full rounded-sm object-cover ${d.position} ${
                     i % 2 === 1 ? "aspect-4/5" : "aspect-square"
                   }`}
                 />
@@ -177,6 +178,28 @@ export function HomePage({ lang }: { lang: Lang }) {
         >
           {c.dishes.cta}
         </Link>
+      </Reveal>
+
+      <Reveal as="section" className="bg-secondary py-24 sm:py-32">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-[1.2fr_0.8fr] md:gap-14">
+          <figure className="gilt overflow-hidden rounded-sm">
+            <img
+              src={crostataCaffe.url}
+              alt={`${c.pause.title}: ${c.pause.body}`}
+              loading="lazy"
+              className="aspect-4/3 w-full object-cover object-[center_58%] sm:aspect-16/10"
+            />
+          </figure>
+          <div>
+            <p className="eyebrow text-primary">{c.pause.eyebrow}</p>
+            <h2 className="mt-5 font-display text-4xl leading-[1.02] sm:text-5xl">
+              {c.pause.title}
+            </h2>
+            <p className="mt-6 text-sm leading-relaxed text-foreground/75 sm:text-base">
+              {c.pause.body}
+            </p>
+          </div>
+        </div>
       </Reveal>
 
       <Reveal as="section" className="border-y border-primary/25 bg-ink">
