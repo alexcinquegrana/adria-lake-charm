@@ -144,7 +144,7 @@ export const copy: Record<Lang, Copy> = {
     dishes: {
       eyebrow: "In cucina",
       title: "Poche cose, fatte bene",
-      body: "La carta è lunga perché il locale è di paese e ognuno deve trovare il suo: la carbonara col guanciale croccante, i gnocchi del boscaiolo con gorgonzola e tartufo, le verdure dell'orto sulla griglia, il tiramisù nel vasetto.",
+      body: "La carta è lunga perché il locale è di paese e ognuno deve trovare il suo: la pasta della casa, il fritto di calamari, le verdure dell'orto sulla griglia e una coppa gelato.",
       cta: "Leggi tutto il menù",
       captions: {
         carbonara: "Pasta della casa, da gustare con un calice di vino",
@@ -283,7 +283,7 @@ export const copy: Record<Lang, Copy> = {
     dishes: {
       eyebrow: "In the kitchen",
       title: "A few things, done properly",
-      body: "The card is long because this is a village place and everyone should find their dish: carbonara with crispy guanciale, gnocchi del boscaiolo with gorgonzola and truffle, seasonal vegetables off the grill, tiramisù in a jar.",
+      body: "The card is long because this is a village place and everyone should find their dish: house pasta, fried calamari, seasonal vegetables off the grill and an ice cream sundae.",
       cta: "Read the full menu",
       captions: {
         carbonara: "House pasta, best enjoyed with a glass of wine",
@@ -422,7 +422,7 @@ export const copy: Record<Lang, Copy> = {
     dishes: {
       eyebrow: "Aus der Küche",
       title: "Wenige Dinge, richtig gemacht",
-      body: "Die Karte ist lang, weil dies ein Dorflokal ist und jede und jeder das Passende finden soll: Carbonara mit knusprigem Guanciale, Gnocchi del boscaiolo mit Gorgonzola und Trüffel, Gemüse der Saison vom Grill, Tiramisù im Glas.",
+      body: "Die Karte ist lang, weil dies ein Dorflokal ist und jede und jeder das Passende finden soll: hausgemachte Pasta, frittierte Calamari, Gemüse der Saison vom Grill und ein Eisbecher.",
       cta: "Ganze Speisekarte lesen",
       captions: {
         carbonara: "Hausgemachte Pasta, dazu ein Glas Wein",
