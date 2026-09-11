@@ -66,6 +66,7 @@ interface Copy {
     cta: string;
     captions: Record<string, string>;
   };
+  pause: { eyebrow: string; title: string; body: string };
   pizza: { eyebrow: string; title: string; body: string };
   visit: {
     eyebrow: string;
@@ -146,11 +147,16 @@ export const copy: Record<Lang, Copy> = {
       body: "La carta è lunga perché il locale è di paese e ognuno deve trovare il suo: la carbonara col guanciale croccante, i gnocchi del boscaiolo con gorgonzola e tartufo, le verdure dell'orto sulla griglia, il tiramisù nel vasetto.",
       cta: "Leggi tutto il menù",
       captions: {
-        carbonara: "Spaghetti alla carbonara con guanciale croccante",
-        gnocchetti: "Gnocchi del boscaiolo, gorgonzola e crema di tartufo",
+        carbonara: "Pasta della casa, da gustare con un calice di vino",
+        gnocchetti: "Fritto di calamari con limone",
         verdure: "Verdure di stagione alla griglia",
-        tiramisu: "Tiramisù della casa, servito nel vasetto",
+        tiramisu: "Coppa gelato della casa",
       },
+    },
+    pause: {
+      eyebrow: "Dolce e caffè",
+      title: "Il piacere di fermarsi",
+      body: "Una fetta di crostata, un caffè e ancora qualche minuto a tavola. Un momento semplice, come in trattoria.",
     },
     pizza: {
       eyebrow: "Pizzeria",
@@ -280,11 +286,16 @@ export const copy: Record<Lang, Copy> = {
       body: "The card is long because this is a village place and everyone should find their dish: carbonara with crispy guanciale, gnocchi del boscaiolo with gorgonzola and truffle, seasonal vegetables off the grill, tiramisù in a jar.",
       cta: "Read the full menu",
       captions: {
-        carbonara: "Spaghetti carbonara with crispy guanciale",
-        gnocchetti: "Gnocchi del boscaiolo, gorgonzola and truffle cream",
+        carbonara: "House pasta, best enjoyed with a glass of wine",
+        gnocchetti: "Fried calamari with lemon",
         verdure: "Grilled seasonal vegetables",
-        tiramisu: "House tiramisù, served in a jar",
+        tiramisu: "House ice cream sundae",
       },
+    },
+    pause: {
+      eyebrow: "Dessert and coffee",
+      title: "The pleasure of lingering",
+      body: "A slice of jam tart, a coffee and a few more minutes at the table. A simple moment, just as it should be in a trattoria.",
     },
     pizza: {
       eyebrow: "Pizzeria",
@@ -414,11 +425,16 @@ export const copy: Record<Lang, Copy> = {
       body: "Die Karte ist lang, weil dies ein Dorflokal ist und jede und jeder das Passende finden soll: Carbonara mit knusprigem Guanciale, Gnocchi del boscaiolo mit Gorgonzola und Trüffel, Gemüse der Saison vom Grill, Tiramisù im Glas.",
       cta: "Ganze Speisekarte lesen",
       captions: {
-        carbonara: "Spaghetti alla Carbonara mit knusprigem Guanciale",
-        gnocchetti: "Gnocchi del boscaiolo, Gorgonzola und Trüffelcreme",
+        carbonara: "Hausgemachte Pasta, dazu ein Glas Wein",
+        gnocchetti: "Frittierte Calamari mit Zitrone",
         verdure: "Gegrilltes Gemüse der Saison",
-        tiramisu: "Hausgemachtes Tiramisù im Glas",
+        tiramisu: "Eisbecher des Hauses",
       },
+    },
+    pause: {
+      eyebrow: "Dolce und Kaffee",
+      title: "Die Freude, noch ein wenig zu bleiben",
+      body: "Ein Stück Marmeladenkuchen, ein Kaffee und noch ein paar Minuten am Tisch. Ein einfacher Moment, wie er in eine Trattoria gehört.",
     },
     pizza: {
       eyebrow: "Pizzeria",
