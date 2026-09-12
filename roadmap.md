@@ -1,1 +1,2 @@
 - [x] Aggiornare le fotografie della home secondo il piano approvato
+- [x] Semplificare home e pagina locale come richiesto

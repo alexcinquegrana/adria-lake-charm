@@ -4,7 +4,6 @@ import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 import facciata from "@/assets/facciata.jpg.asset.json";
-import frutti from "@/assets/frutti-di-mare.jpg.asset.json";
 import pastaVino from "@/assets/pasta-vino.jpeg.asset.json";
 import frittoCalamari from "@/assets/fritto-calamari.jpeg.asset.json";
 import verdure from "@/assets/verdure-griglia.jpg.asset.json";
@@ -16,10 +15,10 @@ export function HomePage({ lang }: { lang: Lang }) {
   const wa = whatsappHref(lang);
 
   const dishes = [
-    { src: pastaVino.url, caption: c.dishes.captions["carbonara"]!, n: "01", position: "object-[center_58%]" },
-    { src: frittoCalamari.url, caption: c.dishes.captions["gnocchetti"]!, n: "02", position: "object-[center_56%]" },
-    { src: verdure.url, caption: c.dishes.captions["verdure"]!, n: "03", position: "object-center" },
-    { src: coppaGelato.url, caption: c.dishes.captions["tiramisu"]!, n: "04", position: "object-[center_48%]" },
+    { src: pastaVino.url, caption: c.dishes.captions["carbonara"]!, position: "object-[center_58%]" },
+    { src: frittoCalamari.url, caption: c.dishes.captions["gnocchetti"]!, position: "object-[center_56%]" },
+    { src: verdure.url, caption: c.dishes.captions["verdure"]!, position: "object-center" },
+    { src: coppaGelato.url, caption: c.dishes.captions["tiramisu"]!, position: "object-[center_48%]" },
   ];
 
   const marquee = [
@@ -65,7 +64,7 @@ export function HomePage({ lang }: { lang: Lang }) {
                 href={wa}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-primary px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-transform hover:-translate-y-0.5"
+                className="hidden rounded-full bg-primary px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-block"
               >
                 {c.callNow}
               </a>
@@ -109,31 +108,6 @@ export function HomePage({ lang }: { lang: Lang }) {
         </div>
       </Reveal>
 
-      <section className="relative bg-secondary py-24 sm:py-32">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2">
-          <Reveal as="figure" className="order-2 md:order-1">
-            <img
-              src={frutti.url}
-              alt={c.lake.caption}
-              loading="lazy"
-              className="gilt aspect-4/5 w-full rounded-sm object-cover"
-            />
-            <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-primary/80">
-              {c.lake.caption}
-            </figcaption>
-          </Reveal>
-          <Reveal className="order-1 md:order-2">
-            <p className="eyebrow text-primary">{c.lake.eyebrow}</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight sm:text-5xl">{c.lake.title}</h2>
-            <div className="mt-6 space-y-5 text-sm leading-relaxed text-foreground/75 sm:text-base">
-              {c.lake.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <p className="eyebrow text-primary">{c.dishes.eyebrow}</p>
         <h2 className="mt-5 max-w-3xl font-display text-4xl leading-[1.02] sm:text-6xl">
@@ -151,7 +125,7 @@ export function HomePage({ lang }: { lang: Lang }) {
               delay={i * 90}
               className={i % 2 === 1 ? "sm:mt-24" : ""}
             >
-              <div className="relative">
+              <div>
                 <img
                   src={d.src}
                   alt={d.caption}
@@ -160,9 +134,6 @@ export function HomePage({ lang }: { lang: Lang }) {
                     i % 2 === 1 ? "aspect-4/5" : "aspect-square"
                   }`}
                 />
-                <span className="absolute -left-2 -top-4 font-display text-5xl text-primary/70 sm:-left-5 sm:text-6xl">
-                  {d.n}
-                </span>
               </div>
               <div className="mt-4 flex items-start gap-3">
                 <span className="wave-rule mt-2 max-w-16 shrink-0" aria-hidden="true" />
