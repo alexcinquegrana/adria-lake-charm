@@ -2,8 +2,8 @@ import type { Lang } from "@/content/menu";
 import { copy } from "@/content/site";
 import { Reveal } from "./Reveal";
 import facciata from "@/assets/facciata.jpg.asset.json";
-import frutti from "@/assets/frutti-di-mare.jpg.asset.json";
-import tiramisu from "@/assets/tiramisu.jpg.asset.json";
+import tavolaQuadretti from "@/assets/carbonara.jpg.asset.json";
+import cortile from "@/assets/cortile-adria.jpg.asset.json";
 
 export function PlacePage({ lang }: { lang: Lang }) {
   const c = copy[lang].placePage;
@@ -22,13 +22,9 @@ export function PlacePage({ lang }: { lang: Lang }) {
       </div>
       <h2 className="mt-20 font-display text-2xl">{c.galleryTitle}</h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
-        <img src={frutti.url} alt={c.galleryTitle} loading="lazy" className="aspect-4/3 w-full rounded-sm object-cover" />
-        <img src={tiramisu.url} alt={c.galleryTitle} loading="lazy" className="aspect-4/3 w-full rounded-sm object-cover" />
+        <img src={tavolaQuadretti.url} alt={c.galleryTitle} loading="lazy" className="aspect-4/3 w-full rounded-sm object-cover object-center" />
+        <img src={cortile.url} alt={c.galleryTitle} loading="lazy" className="aspect-4/3 w-full rounded-sm object-cover object-center" />
       </div>
-      <section className="mt-20 max-w-2xl">
-        <h2 className="font-display text-2xl">{c.storyTitle}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.storyBody}</p>
-      </section>
     </div>
   );
 }
