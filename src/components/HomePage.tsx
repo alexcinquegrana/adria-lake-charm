@@ -54,11 +54,9 @@ export function HomePage({ lang }: { lang: Lang }) {
               <Reveal className="mask-rise">
                 <p className="eyebrow text-primary">{c.hero.place}</p>
               </Reveal>
-              <Reveal className="mask-rise mt-3" delay={120}>
-                <h1 className="display-xl text-foreground">{c.hero.title}</h1>
-              </Reveal>
-              <Reveal className="mask-rise" delay={240}>
-                <p className="font-display text-xl text-primary">{c.hero.since}</p>
+              <Reveal className="mt-3" delay={120}>
+                <h1 className="display-xl leading-[0.95] text-foreground">{c.hero.title}</h1>
+                <p className="mt-2 font-display text-xl text-primary">{c.hero.since}</p>
               </Reveal>
             </div>
             <Reveal delay={360}>
