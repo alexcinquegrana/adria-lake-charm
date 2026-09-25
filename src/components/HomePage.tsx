@@ -43,8 +43,9 @@ export function HomePage({ lang }: { lang: Lang }) {
       const v = videoRef.current;
       if (v && v.duration > 0) {
         const p = v.currentTime / v.duration;
-        // Pan runs between 45% and 90% of the clip, eased.
-        const t = Math.min(1, Math.max(0, (p - 0.45) / 0.45));
+        // Pan completes early (25%–55% of the clip) so the frame is already
+        // centered on the sign when the drone zoom-out reveals it.
+        const t = Math.min(1, Math.max(0, (p - 0.25) / 0.3));
         const eased = t * t * (3 - 2 * t);
         setPanX(30 + eased * 20);
       }
