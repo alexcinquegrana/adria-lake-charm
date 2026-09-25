@@ -94,12 +94,23 @@ export function HomePage({ lang }: { lang: Lang }) {
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <p className="eyebrow text-primary">{c.intro.eyebrow}</p>
-        <div className="mt-6 grid gap-10 md:grid-cols-[1.15fr_1fr]">
+        <p className="mt-5 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
+          {c.hero.lead}
+        </p>
+        <div className="mt-12 grid gap-10 md:grid-cols-[1.15fr_1fr]">
           <h2 className="font-display text-4xl leading-[1.02] sm:text-6xl">{c.intro.title}</h2>
           <div className="space-y-5 text-sm leading-relaxed text-foreground/75 sm:text-base">
             {c.intro.body.map((p) => (
               <p key={p}>{p}</p>
             ))}
+            <a
+              href={wa}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden rounded-full bg-primary px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-block"
+            >
+              {c.callNow}
+            </a>
           </div>
         </div>
         <figure className="gilt mt-14 overflow-hidden rounded-sm">
