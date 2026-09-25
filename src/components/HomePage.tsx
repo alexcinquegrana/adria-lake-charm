@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import type { Lang } from "@/content/menu";
 import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
@@ -15,6 +16,17 @@ import crostataCaffe from "@/assets/crostata-caffe.jpeg.asset.json";
 export function HomePage({ lang }: { lang: Lang }) {
   const c = copy[lang];
   const wa = whatsappHref(lang);
+  const [veil, setVeil] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const vh = window.innerHeight || 1;
+      setVeil(Math.min(1, Math.max(0, window.scrollY / (vh * 0.45))));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const dishes = [
     { src: pastaVino.url, caption: c.dishes.captions["carbonara"]!, position: "object-[center_58%]" },
@@ -45,7 +57,37 @@ export function HomePage({ lang }: { lang: Lang }) {
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
           className="h-[100svh] min-h-[560px] w-full object-cover object-center"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8">
+
+        <div
+          aria-hidden={veil < 0.05}
+          className="absolute inset-0 transition-opacity duration-200 ease-out"
+          style={{ opacity: veil, pointerEvents: veil > 0.6 ? "auto" : "none" }}
+        >
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-16 sm:pb-20">
+            <p className="eyebrow text-primary drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)]">
+              {c.hero.place}
+            </p>
+            <h1 className="mt-3 font-display text-5xl leading-[0.95] drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] sm:text-7xl">
+              {c.hero.title}
+            </h1>
+            <p className="mt-3 font-display text-lg text-primary drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:text-xl">
+              {c.hero.since}
+            </p>
+            <Link
+              to={paths[lang].menu}
+              className="mt-8 inline-block rounded-full border border-primary/60 bg-background/25 px-6 py-3 text-xs font-medium uppercase tracking-widest text-foreground backdrop-blur-sm transition-colors hover:bg-background/40"
+            >
+              {c.nav.menu}
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8 transition-opacity duration-300"
+          style={{ opacity: 1 - veil }}
+        >
           <span className="text-[0.62rem] uppercase tracking-[0.42em] text-primary-foreground/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.55)]">
             {c.hero.scroll}
           </span>
@@ -73,9 +115,7 @@ export function HomePage({ lang }: { lang: Lang }) {
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <p className="eyebrow text-primary">{c.hero.place}</p>
-        <h1 className="mt-4 font-display text-5xl leading-[0.98] sm:text-7xl">{c.hero.title}</h1>
-        <p className="mt-3 font-display text-xl text-primary">{c.hero.since}</p>
-        <p className="mt-8 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
+        <p className="mt-6 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
           {c.hero.lead}
         </p>
         <div className="mt-12 grid gap-10 md:grid-cols-[1.15fr_1fr]">
