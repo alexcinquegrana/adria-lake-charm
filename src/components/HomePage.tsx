@@ -115,9 +115,7 @@ export function HomePage({ lang }: { lang: Lang }) {
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <p className="eyebrow text-primary">{c.hero.place}</p>
-        <h1 className="mt-4 font-display text-5xl leading-[0.98] sm:text-7xl">{c.hero.title}</h1>
-        <p className="mt-3 font-display text-xl text-primary">{c.hero.since}</p>
-        <p className="mt-8 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
+        <p className="mt-6 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
           {c.hero.lead}
         </p>
         <div className="mt-12 grid gap-10 md:grid-cols-[1.15fr_1fr]">
