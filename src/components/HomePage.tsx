@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Lang } from "@/content/menu";
 import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
@@ -17,6 +17,8 @@ export function HomePage({ lang }: { lang: Lang }) {
   const c = copy[lang];
   const wa = whatsappHref(lang);
   const [veil, setVeil] = useState(0);
+  const [panX, setPanX] = useState(30);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -26,6 +28,30 @@ export function HomePage({ lang }: { lang: Lang }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Mobile only: pan the hero crop from the trattoria (left) to full center
+  // as the drone zooms out in the second half of the video.
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    if (!mq.matches) {
+      setPanX(50);
+      return;
+    }
+    let raf = 0;
+    const tick = () => {
+      const v = videoRef.current;
+      if (v && v.duration > 0) {
+        const p = v.currentTime / v.duration;
+        // Pan runs between 45% and 90% of the clip, eased.
+        const t = Math.min(1, Math.max(0, (p - 0.45) / 0.45));
+        const eased = t * t * (3 - 2 * t);
+        setPanX(30 + eased * 20);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   const dishes = [
@@ -49,7 +75,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <div className="relative h-[calc(100svh+55vh)]">
       <section className="sticky top-0 isolate overflow-hidden">
         <video
-
+          ref={videoRef}
           src={heroVideo.url}
           poster={facciata.url}
           autoPlay
@@ -57,7 +83,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           loop
           playsInline
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
-          className="h-[100svh] min-h-[560px] w-full object-cover object-[30%_center] sm:object-center"
+          className="h-[100svh] min-h-[560px] w-full object-cover"
+          style={{ objectPosition: `${panX}% 50%` }}
         />
 
         <div
