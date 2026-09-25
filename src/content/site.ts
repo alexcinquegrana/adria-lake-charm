@@ -128,6 +128,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "Che posto è",
       title: "Un angolo di paese, non una cartolina",
       body: [
+        "Ci troviamo nel centro storico di Gardone Riviera, in una delle località più suggestive del Lago di Garda. A soli pochi metri dal Vittoriale degli Italiani, in Piazza dei Caduti, troverete la nostra trattoria.",
         "L'Adria sta all'incrocio di una strada acciottolata di Gardone Sopra: facciata gialla, gerani alle finestre, l'arco con la scritta TRATTORIA che si vede da lontano. Dentro si mangia come si mangia in casa: tovaglie a quadretti, piatti pieni, gente che si ferma anche solo per un caffè.",
         "È una trattoria, una pizzeria e un bar nello stesso indirizzo. Chi sale al Vittoriale passa di qui prima o dopo la visita; chi vive a Gardone ci torna il mercoledì sera senza pensarci.",
       ],
@@ -136,7 +137,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "Il lago nel piatto",
       title: "Sarde del Garda, trota, casoncelli",
       body: [
-        "Il Garda entra in cucina con le sarde che condiscono i bigoli freschi all'uovo e con la trota, che diventa ragù per i maccheroncini trafilati al bronzo o arriva intera sulla griglia.",
+        "La cucina si apre con i fiori di zucca alla nostra maniera, fatti in casa, ripieni ai tre formaggi, pastellati e fritti al momento.",
         "Accanto, la tradizione bresciana: i casoncelli preparati nel nostro territorio, burro e salvia. E i vini del Garda — Groppello, Lugana — che di questo lago sanno tutto.",
       ],
       caption: "Spaghetti alla nostra pescatora: cozze, vongole, gamberoni, calamari",
@@ -212,11 +213,11 @@ export const copy: Record<Lang, Copy> = {
     },
     contactPage: {
       title: "Dove siamo",
-      lead: "A Gardone Sopra, all'incrocio di Via Caduti, a pochi minuti a piedi dal Vittoriale degli Italiani.",
+      lead: "Nel centro storico di Gardone Riviera, in Piazza dei Caduti: a pochi passi dal Vittoriale degli Italiani e a pochi minuti a piedi dal lungolago.",
       howToFind: "Come arrivare",
       howToFindBody: [
-        "Dal Vittoriale degli Italiani: scendendo verso il centro di Gardone Sopra, cinque minuti a piedi lungo la strada acciottolata.",
-        "Dal lungolago di Gardone Riviera: si sale verso Gardone Sopra, la facciata gialla con l'arco della trattoria è all'angolo.",
+        "Dal Vittoriale degli Italiani: siamo a pochi passi, scendendo verso il centro storico.",
+        "Dal lungolago di Gardone Riviera: siamo a pochi minuti a piedi, a meno di 1 km; la facciata gialla con l'arco della trattoria è all'angolo.",
         "In auto: parcheggi nelle vie del centro storico; l'ultimo tratto si fa a piedi.",
       ],
       mapLabel: "Mappa di Gardone Riviera con la posizione della trattoria",
@@ -267,6 +268,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "What kind of place",
       title: "A village corner, not a postcard",
       body: [
+        "We are in the historic centre of Gardone Riviera, in one of the most charming places on Lake Garda. Just a few metres from the Vittoriale degli Italiani, in Piazza dei Caduti, you will find our trattoria.",
         "Adria sits on a cobbled crossroads in Gardone Sopra: yellow facade, geraniums on the windowsills, the arch with TRATTORIA written across it that you spot from down the street. Inside, it is home cooking — checked tablecloths, full plates, people dropping in just for a coffee.",
         "It is a trattoria, a pizzeria and a bar at the same address. Visitors on their way to the Vittoriale stop here before or after; locals come back on a Wednesday evening without thinking about it.",
       ],
@@ -275,7 +277,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "The lake on the plate",
       title: "Garda sardines, trout, casoncelli",
       body: [
-        "Lake Garda comes into the kitchen with the sardines that dress fresh egg bigoli, and with trout — turned into a ragù for bronze-cut maccheroncini, or served whole from the grill.",
+        "The meal begins with our own courgette flowers: homemade, filled with three cheeses, battered and fried to order.",
         "Alongside them, the Brescia tradition: casoncelli made locally, with butter and sage. And the wines of the lake — Groppello, Lugana — that know this water by heart.",
       ],
       caption: "Spaghetti alla nostra pescatora: mussels, clams, prawns, squid",
@@ -351,11 +353,11 @@ export const copy: Record<Lang, Copy> = {
     },
     contactPage: {
       title: "Find us",
-      lead: "In Gardone Sopra, on the Via Caduti crossroads, a few minutes on foot from the Vittoriale degli Italiani.",
+      lead: "In Gardone Riviera’s historic centre, in Piazza dei Caduti: a few steps from the Vittoriale and a short walk from the lakefront.",
       howToFind: "Getting here",
       howToFindBody: [
-        "From the Vittoriale degli Italiani: walk down towards the centre of Gardone Sopra, five minutes along the cobbled street.",
-        "From the Gardone Riviera lakefront: walk up towards Gardone Sopra; the yellow facade with the trattoria arch is on the corner.",
+        "From the Vittoriale degli Italiani: we are just a few steps away, walking down towards the historic centre.",
+        "From the Gardone Riviera lakefront: we are a short walk away, less than 1 km; the yellow facade with the trattoria arch is on the corner.",
         "By car: park in the streets of the old centre; the last stretch is on foot.",
       ],
       mapLabel: "Map of Gardone Riviera showing the trattoria",
@@ -406,6 +408,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "Was für ein Ort",
       title: "Eine Dorfecke, keine Postkarte",
       body: [
+        "Wir befinden uns im historischen Zentrum von Gardone Riviera, an einem der schönsten Orte am Gardasee. Nur wenige Meter vom Vittoriale degli Italiani entfernt finden Sie unsere Trattoria an der Piazza dei Caduti.",
         "Das Adria steht an einer Kopfsteinpflaster-Kreuzung in Gardone Sopra: gelbe Fassade, Geranien an den Fenstern, der Bogen mit dem Schriftzug TRATTORIA, den man schon von weitem sieht. Drinnen wird gekocht wie zu Hause: karierte Tischdecken, volle Teller, Gäste, die nur auf einen Kaffee hereinschauen.",
         "Trattoria, Pizzeria und Bar unter derselben Adresse. Wer zum Vittoriale hinaufgeht, kehrt hier davor oder danach ein; wer in Gardone lebt, kommt am Mittwochabend ganz selbstverständlich wieder.",
       ],
@@ -414,7 +417,7 @@ export const copy: Record<Lang, Copy> = {
       eyebrow: "Der See auf dem Teller",
       title: "Gardasee-Sardinen, Forelle, Casoncelli",
       body: [
-        "Der Gardasee kommt mit den Sardinen in die Küche, die frische Eier-Bigoli würzen, und mit der Forelle: als Ragout zu bronzegezogenen Maccheroncini oder ganz vom Grill.",
+        "Den Anfang machen unsere Zucchiniblüten: hausgemacht, mit drei Käsesorten gefüllt, im Teigmantel und frisch frittiert.",
         "Daneben die Brescianer Tradition: Casoncelli aus unserer Region, mit Butter und Salbei. Und die Weine des Sees — Groppello, Lugana —, die dieses Wasser kennen.",
       ],
       caption: "Spaghetti alla nostra pescatora: Miesmuscheln, Venusmuscheln, Garnelen, Tintenfisch",
@@ -490,11 +493,11 @@ export const copy: Record<Lang, Copy> = {
     },
     contactPage: {
       title: "Anfahrt",
-      lead: "In Gardone Sopra, an der Kreuzung der Via Caduti, wenige Gehminuten vom Vittoriale degli Italiani.",
+      lead: "Im historischen Zentrum von Gardone Riviera, an der Piazza dei Caduti: wenige Schritte vom Vittoriale und nur wenige Gehminuten von der Seepromenade entfernt.",
       howToFind: "So finden Sie uns",
       howToFindBody: [
-        "Vom Vittoriale degli Italiani: hinunter Richtung Zentrum von Gardone Sopra, fünf Minuten über die Pflasterstraße.",
-        "Von der Seepromenade in Gardone Riviera: hinauf nach Gardone Sopra; die gelbe Fassade mit dem Trattoria-Bogen steht an der Ecke.",
+        "Vom Vittoriale degli Italiani: nur wenige Schritte hinunter in Richtung Altstadt.",
+        "Von der Seepromenade in Gardone Riviera: wenige Gehminuten und weniger als 1 km; die gelbe Fassade mit dem Trattoria-Bogen steht an der Ecke.",
         "Mit dem Auto: Parkplätze in den Gassen des Ortskerns; das letzte Stück geht zu Fuß.",
       ],
       mapLabel: "Karte von Gardone Riviera mit der Lage der Trattoria",
