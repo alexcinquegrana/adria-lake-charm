@@ -57,7 +57,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           loop
           playsInline
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
-          className="h-[100svh] min-h-[560px] w-full object-cover object-center"
+          className="h-[100svh] min-h-[560px] w-full object-cover object-[30%_center] sm:object-center"
         />
 
         <div
