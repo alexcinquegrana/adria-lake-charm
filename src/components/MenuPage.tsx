@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { allergenNames, dishText, menuGroups, tagLabels, type Lang, type Tag } from "@/content/menu";
 import { copy, restaurant } from "@/content/site";
+import menuTavola from "@/assets/menu-tavola.jpeg.asset.json";
 
 const allTags: Tag[] = ["lago", "mare", "carne", "veg", "pizza"];
 
@@ -34,6 +35,11 @@ export function MenuPage({ lang }: { lang: Lang }) {
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
         {c.menuPage.lead}
       </p>
+      <img
+        src={menuTavola.url}
+        alt={c.menuPage.title}
+        className="mt-8 aspect-16/9 w-full rounded-sm object-cover object-[center_58%]"
+      />
 
       <div className="sticky top-[57px] z-30 -mx-5 mt-8 border-y border-border/60 bg-background/95 px-5 py-3 backdrop-blur">
         <div className="flex flex-wrap gap-2">

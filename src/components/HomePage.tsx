@@ -4,6 +4,8 @@ import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
 import facciata from "@/assets/facciata.jpg.asset.json";
+import heroVideo from "@/assets/adria-hero.mp4.asset.json";
+import salaEsterno from "@/assets/sala-esterno.jpeg.asset.json";
 import pastaVino from "@/assets/pasta-vino.jpeg.asset.json";
 import frittoCalamari from "@/assets/fritto-calamari.jpeg.asset.json";
 import verdure from "@/assets/verdure-griglia.jpg.asset.json";
@@ -33,10 +35,15 @@ export function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <section className="relative isolate overflow-hidden">
-        <img
-          src={facciata.url}
-          alt={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
-          className="h-[92vh] min-h-[560px] w-full scale-105 object-cover"
+        <video
+          src={heroVideo.url}
+          poster={facciata.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
+          className="h-[92vh] min-h-[560px] w-full scale-105 object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
@@ -106,6 +113,14 @@ export function HomePage({ lang }: { lang: Lang }) {
             ))}
           </div>
         </div>
+        <figure className="gilt mt-14 overflow-hidden rounded-sm">
+          <img
+            src={salaEsterno.url}
+            alt={`${restaurant.name}, ${restaurant.city}`}
+            loading="lazy"
+            className="aspect-16/9 w-full object-cover object-center sm:aspect-21/9"
+          />
+        </figure>
       </Reveal>
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
