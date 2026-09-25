@@ -33,7 +33,7 @@ export function SiteLayout({
       </a>
 
       <header
-        className={`sticky top-0 z-40 border-b transition-all duration-500 ${
+        className={`${page === "home" ? "fixed inset-x-0" : "sticky"} top-0 z-40 border-b transition-all duration-500 ${
           scrolled
             ? "translate-y-0 border-primary/30 bg-background/92 opacity-100 backdrop-blur-md"
             : page === "home"
