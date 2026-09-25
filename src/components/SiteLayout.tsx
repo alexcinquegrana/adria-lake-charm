@@ -33,10 +33,12 @@ export function SiteLayout({
       </a>
 
       <header
-        className={`sticky top-0 z-40 border-b transition-all duration-500 ${
+        className={`${page === "home" ? "fixed inset-x-0" : "sticky"} top-0 z-40 border-b transition-all duration-500 ${
           scrolled
-            ? "border-primary/30 bg-background/92 backdrop-blur-md"
-            : "border-transparent bg-background/40 backdrop-blur-sm"
+            ? "translate-y-0 border-primary/30 bg-background/92 opacity-100 backdrop-blur-md"
+            : page === "home"
+              ? "pointer-events-none -translate-y-full border-transparent opacity-0"
+              : "border-transparent bg-background/40 backdrop-blur-sm"
         }`}
       >
         <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">

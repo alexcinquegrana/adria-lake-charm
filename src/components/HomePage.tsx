@@ -45,33 +45,14 @@ export function HomePage({ lang }: { lang: Lang }) {
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
           className="h-[100svh] min-h-[560px] w-full object-cover object-center"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/85 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/80 to-transparent" />
-
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-10 sm:pb-14">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <Reveal className="mask-rise">
-                <p className="eyebrow text-primary">{c.hero.place}</p>
-              </Reveal>
-              <Reveal className="mt-3" delay={120}>
-                <h1 className="display-xl leading-[0.95] text-foreground">{c.hero.title}</h1>
-                <p className="mt-2 font-display text-xl text-primary">{c.hero.since}</p>
-              </Reveal>
-            </div>
-            <Reveal delay={360}>
-              <Link
-                to={paths[lang].menu}
-                className="inline-block rounded-full border border-primary/60 bg-background/20 px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary backdrop-blur transition-colors hover:bg-primary hover:text-primary-foreground"
-              >
-                {c.nav.menu}
-              </Link>
-            </Reveal>
-          </div>
-          <div className="mt-8 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.4em] text-foreground/50">
-            <span className="h-8 w-px animate-pulse bg-primary/60" aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8">
+          <span className="text-[0.62rem] uppercase tracking-[0.42em] text-primary-foreground/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.55)]">
             {c.hero.scroll}
-          </div>
+          </span>
+          <span
+            className="h-10 w-px animate-pulse bg-primary-foreground/70"
+            aria-hidden="true"
+          />
         </div>
       </section>
 
@@ -91,8 +72,10 @@ export function HomePage({ lang }: { lang: Lang }) {
       </div>
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
-        <p className="eyebrow text-primary">{c.intro.eyebrow}</p>
-        <p className="mt-5 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
+        <p className="eyebrow text-primary">{c.hero.place}</p>
+        <h1 className="mt-4 font-display text-5xl leading-[0.98] sm:text-7xl">{c.hero.title}</h1>
+        <p className="mt-3 font-display text-xl text-primary">{c.hero.since}</p>
+        <p className="mt-8 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
           {c.hero.lead}
         </p>
         <div className="mt-12 grid gap-10 md:grid-cols-[1.15fr_1fr]">
