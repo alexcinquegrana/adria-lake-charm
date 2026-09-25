@@ -99,6 +99,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           />
         </div>
       </section>
+      </div>
+
 
 
       <div className="overflow-hidden border-y border-primary/20 bg-secondary py-4">
