@@ -46,8 +46,10 @@ export function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden">
+      <div className="relative h-[calc(100svh+55vh)]">
+      <section className="sticky top-0 isolate overflow-hidden">
         <video
+
           src={heroVideo.url}
           poster={facciata.url}
           autoPlay
@@ -97,6 +99,8 @@ export function HomePage({ lang }: { lang: Lang }) {
           />
         </div>
       </section>
+      </div>
+
 
 
       <div className="overflow-hidden border-y border-primary/20 bg-secondary py-4">
