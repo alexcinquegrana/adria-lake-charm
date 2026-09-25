@@ -43,51 +43,38 @@ export function HomePage({ lang }: { lang: Lang }) {
           loop
           playsInline
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
-          className="h-[92vh] min-h-[560px] w-full scale-105 object-cover object-center"
+          className="h-[100svh] min-h-[560px] w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/70 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        <div
-          className="veil pointer-events-none absolute inset-0 bg-background"
-          aria-hidden="true"
-        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/85 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/80 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-16">
-          <Reveal className="mask-rise">
-            <p className="eyebrow text-primary">{c.hero.place}</p>
-          </Reveal>
-          <Reveal className="mask-rise mt-3" delay={120}>
-            <h1 className="display-xl text-foreground">{c.hero.title}</h1>
-          </Reveal>
-          <Reveal className="mask-rise" delay={240}>
-            <p className="font-display text-xl text-primary">{c.hero.since}</p>
-          </Reveal>
-          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <p className="max-w-md text-sm leading-relaxed text-foreground/80 sm:text-base">
-              {c.hero.lead}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={wa}
-                target="_blank"
-                rel="noreferrer"
-                className="hidden rounded-full bg-primary px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-block"
-              >
-                {c.callNow}
-              </a>
+        <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-10 sm:pb-14">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Reveal className="mask-rise">
+                <p className="eyebrow text-primary">{c.hero.place}</p>
+              </Reveal>
+              <Reveal className="mt-3" delay={120}>
+                <h1 className="display-xl leading-[0.95] text-foreground">{c.hero.title}</h1>
+                <p className="mt-2 font-display text-xl text-primary">{c.hero.since}</p>
+              </Reveal>
+            </div>
+            <Reveal delay={360}>
               <Link
                 to={paths[lang].menu}
-                className="rounded-full border border-primary/60 px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="inline-block rounded-full border border-primary/60 bg-background/20 px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary backdrop-blur transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 {c.nav.menu}
               </Link>
-            </div>
+            </Reveal>
           </div>
-          <p className="mt-10 text-[0.65rem] uppercase tracking-[0.4em] text-foreground/45">
+          <div className="mt-8 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.4em] text-foreground/50">
+            <span className="h-8 w-px animate-pulse bg-primary/60" aria-hidden="true" />
             {c.hero.scroll}
-          </p>
+          </div>
         </div>
       </section>
+
 
       <div className="overflow-hidden border-y border-primary/20 bg-secondary py-4">
         <div className="marquee-track flex w-max gap-10 whitespace-nowrap">
@@ -105,12 +92,23 @@ export function HomePage({ lang }: { lang: Lang }) {
 
       <Reveal as="section" className="mx-auto max-w-6xl px-5 py-24 sm:py-32">
         <p className="eyebrow text-primary">{c.intro.eyebrow}</p>
-        <div className="mt-6 grid gap-10 md:grid-cols-[1.15fr_1fr]">
+        <p className="mt-5 max-w-3xl font-display text-2xl leading-snug text-foreground/90 sm:text-3xl">
+          {c.hero.lead}
+        </p>
+        <div className="mt-12 grid gap-10 md:grid-cols-[1.15fr_1fr]">
           <h2 className="font-display text-4xl leading-[1.02] sm:text-6xl">{c.intro.title}</h2>
           <div className="space-y-5 text-sm leading-relaxed text-foreground/75 sm:text-base">
             {c.intro.body.map((p) => (
               <p key={p}>{p}</p>
             ))}
+            <a
+              href={wa}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden rounded-full bg-primary px-7 py-3.5 text-xs font-medium uppercase tracking-widest text-primary-foreground transition-transform hover:-translate-y-0.5 sm:inline-block"
+            >
+              {c.callNow}
+            </a>
           </div>
         </div>
         <figure className="gilt mt-14 overflow-hidden rounded-sm">
