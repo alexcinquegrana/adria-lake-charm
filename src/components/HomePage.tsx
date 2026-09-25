@@ -45,7 +45,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
           className="h-[100svh] min-h-[560px] w-full object-cover object-center"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/85 to-transparent" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/80 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-10 sm:pb-14">
