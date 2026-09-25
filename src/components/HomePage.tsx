@@ -57,7 +57,37 @@ export function HomePage({ lang }: { lang: Lang }) {
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
           className="h-[100svh] min-h-[560px] w-full object-cover object-center"
         />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8">
+
+        <div
+          aria-hidden={veil < 0.05}
+          className="absolute inset-0 transition-opacity duration-200 ease-out"
+          style={{ opacity: veil, pointerEvents: veil > 0.6 ? "auto" : "none" }}
+        >
+          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/80 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background/70 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-6xl px-5 pb-16 sm:pb-20">
+            <p className="eyebrow text-primary drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)]">
+              {c.hero.place}
+            </p>
+            <h1 className="mt-3 font-display text-5xl leading-[0.95] drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] sm:text-7xl">
+              {c.hero.title}
+            </h1>
+            <p className="mt-3 font-display text-lg text-primary drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:text-xl">
+              {c.hero.since}
+            </p>
+            <Link
+              to={paths[lang].menu}
+              className="mt-8 inline-block rounded-full border border-primary/60 bg-background/25 px-6 py-3 text-xs font-medium uppercase tracking-widest text-foreground backdrop-blur-sm transition-colors hover:bg-background/40"
+            >
+              {c.nav.menu}
+            </Link>
+          </div>
+        </div>
+
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-3 pb-8 transition-opacity duration-300"
+          style={{ opacity: 1 - veil }}
+        >
           <span className="text-[0.62rem] uppercase tracking-[0.42em] text-primary-foreground/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.55)]">
             {c.hero.scroll}
           </span>
