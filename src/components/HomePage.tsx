@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import type { Lang } from "@/content/menu";
 import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
@@ -15,6 +16,17 @@ import crostataCaffe from "@/assets/crostata-caffe.jpeg.asset.json";
 export function HomePage({ lang }: { lang: Lang }) {
   const c = copy[lang];
   const wa = whatsappHref(lang);
+  const [veil, setVeil] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const vh = window.innerHeight || 1;
+      setVeil(Math.min(1, Math.max(0, window.scrollY / (vh * 0.45))));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const dishes = [
     { src: pastaVino.url, caption: c.dishes.captions["carbonara"]!, position: "object-[center_58%]" },
