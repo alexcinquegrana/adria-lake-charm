@@ -1,2 +1,3 @@
 - [x] Aggiornare le fotografie della home secondo il piano approvato
 - [x] Semplificare home e pagina locale come richiesto
+- [x] Integrare il nuovo video, le quattro foto e aggiornare testi e distanze
