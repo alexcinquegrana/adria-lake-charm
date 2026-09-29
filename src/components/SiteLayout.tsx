@@ -46,7 +46,7 @@ export function SiteLayout({
             to={paths[lang].home}
             className="flex items-center gap-3 text-foreground transition-opacity hover:opacity-85"
           >
-            <Logo className="h-14 w-auto" />
+            <Logo className="h-10 w-auto" />
             <span className="leading-none">
               <span className="block text-[0.58rem] uppercase tracking-[0.28em] text-primary">
                 da Kevin
@@ -132,7 +132,7 @@ export function SiteLayout({
         </div>
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:grid-cols-3">
           <div>
-            <Logo variant="full" className="h-28 w-auto text-foreground/90" />
+            <Logo variant="full" className="h-20 w-auto text-foreground/90" />
             <p className="mt-4 text-sm text-foreground/70">{c.footer.tagline}</p>
           </div>
           <address className="not-italic text-sm leading-relaxed">
