@@ -1,3 +1,10 @@
+import logoAsset from "@/assets/adria-logo.png.asset.json";
+
+/**
+ * Marchio storico "with love ADRIA" ripreso dalla parete della trattoria.
+ * L'immagine è usata come maschera: il colore segue sempre currentColor,
+ * così il logo resta coerente con la palette (oro / avorio su rosso).
+ */
 export function Logo({
   className = "",
   variant = "compact",
@@ -5,79 +12,23 @@ export function Logo({
   className?: string;
   variant?: "compact" | "full";
 }) {
-  if (variant === "full") {
-    return (
-      <svg
-        viewBox="0 0 260 120"
-        className={className}
-        role="img"
-        aria-label="Trattoria Adria da Kevin"
-        fill="none"
-      >
-        <g stroke="currentColor" strokeWidth="1" opacity="0.6">
-          <circle cx="130" cy="52" r="46" />
-          <circle cx="130" cy="52" r="41" strokeDasharray="1 5" strokeLinecap="round" />
-        </g>
-        <path
-          d="M113 70 L130 26 L147 70 M119.5 56 h21"
-          stroke="currentColor"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <text
-          x="130"
-          y="90"
-          textAnchor="middle"
-          fill="currentColor"
-          fontFamily="Fraunces, Georgia, serif"
-          fontSize="20"
-          letterSpacing="6"
-        >
-          ADRIA
-        </text>
-        <text
-          x="130"
-          y="108"
-          textAnchor="middle"
-          fill="currentColor"
-          fontFamily="Archivo, sans-serif"
-          fontSize="8"
-          letterSpacing="5"
-          opacity="0.75"
-        >
-          DA KEVIN · GARDONE
-        </text>
-      </svg>
-    );
-  }
+  const maskStyle = {
+    maskImage: `url(${logoAsset.url})`,
+    WebkitMaskImage: `url(${logoAsset.url})`,
+    maskRepeat: "no-repeat",
+    WebkitMaskRepeat: "no-repeat",
+    maskPosition: "center",
+    WebkitMaskPosition: "center",
+    maskSize: "contain",
+    WebkitMaskSize: "contain",
+  } as const;
 
   return (
-    <svg
-      viewBox="0 0 44 44"
-      className={className}
+    <span
       role="img"
       aria-label="Trattoria Adria da Kevin"
-      fill="none"
-    >
-      <circle cx="22" cy="22" r="20.5" stroke="currentColor" strokeWidth="1" opacity="0.65" />
-      <circle
-        cx="22"
-        cy="22"
-        r="17"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeDasharray="1 4"
-        strokeLinecap="round"
-        opacity="0.8"
-      />
-      <path
-        d="M14 30 L22 12 L30 30 M17 24 h10"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      className={`inline-block bg-current ${variant === "full" ? "aspect-5/4" : "aspect-5/4"} ${className}`}
+      style={maskStyle}
+    />
   );
 }
