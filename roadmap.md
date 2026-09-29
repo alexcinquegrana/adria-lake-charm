@@ -1,3 +1,5 @@
 - [x] Aggiornare le fotografie della home secondo il piano approvato
 - [x] Semplificare home e pagina locale come richiesto
 - [x] Integrare il nuovo video, le quattro foto e aggiornare testi e distanze
+- [x] Nuovo logo storico "with love ADRIA" in navbar, footer, icona sito
+- [x] Foto ingresso e piazza con archi nella sezione Il locale
