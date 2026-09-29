@@ -46,7 +46,7 @@ export function SiteLayout({
             to={paths[lang].home}
             className="flex items-center gap-3 text-foreground transition-opacity hover:opacity-85"
           >
-            <Logo className="h-12 w-auto" />
+            <Logo className="h-14 w-auto" />
             <span className="leading-none">
               <span className="block text-[0.58rem] uppercase tracking-[0.28em] text-primary">
                 da Kevin

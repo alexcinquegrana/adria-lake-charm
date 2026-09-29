@@ -17,7 +17,7 @@ export function PlacePage({ lang }: { lang: Lang }) {
             {c.lead}
           </p>
         </div>
-        <Logo variant="full" className="h-24 w-auto shrink-0 text-primary/80 sm:h-28" />
+        <Logo variant="full" className="h-24 w-auto shrink-0 text-primary sm:h-28" />
       </div>
 
       <figure className="mt-10">
