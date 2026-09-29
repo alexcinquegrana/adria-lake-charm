@@ -27,7 +27,8 @@ export function Logo({
     <span
       role="img"
       aria-label="Trattoria Adria da Kevin"
-      className={`inline-block bg-current ${variant === "full" ? "aspect-5/4" : "aspect-5/4"} ${className}`}
+      data-variant={variant}
+      className={`inline-block aspect-[891/465] bg-current ${className}`}
       style={maskStyle}
     />
   );
