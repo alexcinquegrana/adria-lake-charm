@@ -46,7 +46,7 @@
   --color-ink: var(--ink);
   --color-wine: var(--wine);
   --color-wine-deep: var(--wine-deep);
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
   --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -86,19 +86,6 @@
   --ring: var(--ochre);
 }
 
-/* Prova temporanea dei caratteri per i titoli (selettore in basso a destra). */
-html[data-font="playfair"] {
-  --font-try: "Playfair Display", Georgia, serif;
-}
-html[data-font="cormorant"] {
-  --font-try: "Cormorant Garamond", Georgia, serif;
-}
-html[data-font="marcellus"] {
-  --font-try: "Marcellus", Georgia, serif;
-}
-html[data-font] :is(h1, h2, h3, h4, .font-display, .display-xl) {
-  font-family: var(--font-try, var(--font-display));
-}
 
 
 

@@ -3,7 +3,6 @@ import { useEffect, useState, type ReactNode } from "react";
 import type { Lang } from "@/content/menu";
 import { copy, languages, paths, restaurant, whatsappHref, type PageKey } from "@/content/site";
 import { Logo } from "./Logo";
-import { FontSwitcher } from "./FontSwitcher";
 
 
 export function SiteLayout({
@@ -129,7 +128,6 @@ export function SiteLayout({
 
       <main id="main">{children}</main>
 
-      <FontSwitcher />
 
 
       <footer className="mt-24 border-t border-primary/25 bg-secondary">
