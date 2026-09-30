@@ -41,34 +41,35 @@ export function SiteLayout({
               : "border-transparent bg-background/40 backdrop-blur-sm"
         }`}
       >
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-3">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-4">
           <Link
             to={paths[lang].home}
             className="flex items-center gap-3 text-foreground transition-opacity hover:opacity-85"
           >
-            <Logo className="h-10 w-auto" />
+            <Logo className="h-14 w-auto" />
             <span className="leading-none">
-              <span className="block text-[0.58rem] uppercase tracking-[0.28em] text-primary">
+              <span className="block font-display text-sm tracking-wide text-primary">
                 da Kevin
               </span>
-              <span className="mt-1 block text-[0.58rem] uppercase tracking-[0.22em] text-foreground/60">
+              <span className="mt-1.5 block text-[0.68rem] uppercase tracking-[0.2em] text-foreground/70">
                 Gardone Riviera
               </span>
             </span>
           </Link>
 
-          <nav className="ml-auto hidden items-center gap-7 text-xs uppercase tracking-[0.2em] md:flex">
+          <nav className="ml-auto hidden items-center gap-8 text-sm font-medium uppercase tracking-[0.16em] md:flex">
             {nav.map((k) => (
               <Link
                 key={k}
                 to={paths[lang][k]}
                 activeProps={{ className: "text-primary" }}
-                className="link-gold text-foreground/85 hover:text-primary"
+                className="link-gold text-foreground/90 hover:text-primary"
               >
                 {c.nav[k]}
               </Link>
             ))}
           </nav>
+
 
           <div className="ml-auto flex items-center gap-3 md:ml-0">
             <ul className="flex items-center gap-1 text-xs">
