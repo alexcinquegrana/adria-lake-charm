@@ -86,15 +86,6 @@
   --ring: var(--ochre);
 }
 
-html[data-font="cormorant"] {
-  --font-try: "Cormorant Garamond", Georgia, serif;
-}
-html[data-font="marcellus"] {
-  --font-try: "Marcellus", Georgia, serif;
-}
-html[data-font] :is(h1, h2, h3, h4, .font-display, .display-xl) {
-  font-family: var(--font-try, var(--font-display));
-}
 
 
 
