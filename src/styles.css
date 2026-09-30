@@ -86,6 +86,19 @@
   --ring: var(--ochre);
 }
 
+/* Prova temporanea dei caratteri per i titoli (selettore in basso a destra). */
+html[data-font="playfair"] {
+  --font-display: "Playfair Display", Georgia, serif;
+}
+html[data-font="cormorant"] {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+}
+html[data-font="marcellus"] {
+  --font-display: "Marcellus", Georgia, serif;
+}
+
+
+
 
 @layer base {
   * {
