@@ -120,17 +120,16 @@ export const copy: Record<Lang, Copy> = {
     hero: {
       place: "Gardone Riviera · Lago di Garda",
       title: "Trattoria Adria",
-      lead: "Trattoria, pizzeria e bar sotto gli archi gialli di Via Caduti, a due passi dal Vittoriale degli Italiani.",
+      lead: "Sotto gli archi gialli di Via Caduti, a due passi dal Vittoriale: trattoria, pizzeria e bar come in paese.",
       since: "Da Kevin",
       scroll: "Scorri",
     },
     intro: {
       eyebrow: "Che posto è",
-      title: "Un angolo di paese, non una cartolina",
+      title: "Un pezzo di Gardone, non una cartolina",
       body: [
-        "Ci troviamo nel centro storico di Gardone Riviera, in una delle località più suggestive del Lago di Garda. A soli pochi metri dal Vittoriale degli Italiani, in Piazza dei Caduti, troverete la nostra trattoria.",
-        "L'Adria sta all'incrocio di una strada acciottolata di Gardone Sopra: facciata gialla, gerani alle finestre, l'arco con la scritta TRATTORIA che si vede da lontano. Dentro si mangia come si mangia in casa: tovaglie a quadretti, piatti pieni, gente che si ferma anche solo per un caffè.",
-        "È una trattoria, una pizzeria e un bar nello stesso indirizzo. Chi sale al Vittoriale passa di qui prima o dopo la visita; chi vive a Gardone ci torna il mercoledì sera senza pensarci.",
+        "Siamo nel centro storico di Gardone Riviera, a pochi metri dal Vittoriale, in Piazza dei Caduti. L’Adria si riconosce da lontano: facciata gialla, gerani alle finestre, l’arco con scritto TRATTORIA.",
+        "Dentro si mangia come a casa: tovaglie a quadretti, piatti fatti come si deve, chi si ferma per il pranzo e chi solo per un caffè. Trattoria, pizzeria e bar nello stesso indirizzo. Chi sale al Vittoriale passa di qui prima o dopo. Chi vive a Gardone torna il mercoledì sera senza pensarci.",
       ],
     },
     lake: {
@@ -144,11 +143,11 @@ export const copy: Record<Lang, Copy> = {
     },
     dishes: {
       eyebrow: "In cucina",
-      title: "Poche cose, fatte bene",
-      body: "La carta è lunga perché il locale è di paese e ognuno deve trovare il suo: la pasta della casa, il fritto di calamari, le verdure dell'orto sulla griglia e una coppa gelato.",
+      title: "Poche cose, fatte come si deve",
+      body: "La carta è quella di un locale di paese: ognuno deve trovare il suo. Pasta della casa, fritto di calamari, verdure dell’orto in griglia, una coppa gelato a fine pasto. Niente scenografie: i classici di trattoria, senza fronzoli.",
       cta: "Leggi tutto il menù",
       captions: {
-        carbonara: "Pasta della casa, da gustare con un calice di vino",
+        carbonara: "Pasta della casa, con un calice di vino",
         gnocchetti: "Fritto di calamari con limone",
         verdure: "Verdure di stagione alla griglia",
         tiramisu: "Coppa gelato della casa",
@@ -156,18 +155,18 @@ export const copy: Record<Lang, Copy> = {
     },
     pause: {
       eyebrow: "Dolce e caffè",
-      title: "Il piacere di fermarsi",
-      body: "Una fetta di crostata, un caffè e ancora qualche minuto a tavola. Un momento semplice, come in trattoria.",
+      title: "Il piacere di non alzarsi subito",
+      body: "Una fetta di crostata, un caffè, ancora cinque minuti a tavola. Il gesto più semplice di una trattoria, e spesso il più bello.",
     },
     pizza: {
       eyebrow: "Pizzeria",
       title: "Anche la sera tardi, anche solo una margherita",
-      body: "Impasto classico, forno acceso tutte le sere: dalla marinara a 6 euro alla Lazio con guanciale e pecorino romano DOP. Le speciali portano il nome delle regioni; la D'Annunzio, con crema di zucchine e pomodorini, porta quello del vicino di casa più illustre.",
+      body: "Forno acceso tutte le sere, impasto classico. Dalla marinara a 6 euro alla Lazio con guanciale e pecorino romano DOP. Le speciali portano il nome delle regioni; la D’Annunzio — crema di zucchine e pomodorini — quello del vicino di casa più illustre.",
     },
     visit: {
       eyebrow: "Prenotare",
-      title: "Un tavolo si tiene con una telefonata",
-      body: "Non serve un modulo: chiama, dicci quanti siete e a che ora. Se è pieno ti diciamo subito quando c'è posto.",
+      title: "Un tavolo si tiene con una telefonata. O un messaggio.",
+      body: "Niente moduli: dimmi quanti siete e a che ora. Se è pieno, ti diciamo subito quando c’è posto.",
       addressLabel: "Indirizzo",
       phoneLabel: "Telefono",
       hoursLabel: "Orari",
@@ -176,7 +175,7 @@ export const copy: Record<Lang, Copy> = {
     },
     menuPage: {
       title: "Il menù",
-      lead: "Il menù completo della trattoria, della pizzeria e del bar. Prezzi e descrizioni sono quelli della carta in tavola.",
+      lead: "Il menù della trattoria, della pizzeria e del bar. Prezzi e descrizioni sono quelli della carta in tavola.",
       search: "Cerca",
       searchPlaceholder: "Cerca un piatto, un ingrediente…",
       filters: "Filtra",
@@ -184,7 +183,7 @@ export const copy: Record<Lang, Copy> = {
       noResults: "Nessun piatto corrisponde alla ricerca.",
       allergensTitle: "Allergeni",
       allergensNote:
-        "I numeri tra parentesi indicano gli allergeni presenti. Per qualsiasi intolleranza, parlane con noi in sala.",
+        "I numeri tra parentesi indicano gli allergeni. Per qualsiasi intolleranza, parlane con noi in sala.",
       frozenNote:
         "Alcuni prodotti ittici possono essere abbattuti o surgelati all'origine, secondo disponibilità.",
       downloadPdf: "Scarica il menù in PDF",
@@ -260,17 +259,16 @@ export const copy: Record<Lang, Copy> = {
     hero: {
       place: "Gardone Riviera · Lake Garda",
       title: "Trattoria Adria",
-      lead: "Trattoria, pizzeria and bar under the yellow arches of Via Caduti, a short walk from the Vittoriale degli Italiani.",
+      lead: "Under the yellow arches of Via Caduti, a short walk from the Vittoriale: trattoria, pizzeria and bar, the little town way.",
       since: "da Kevin",
       scroll: "Scroll",
     },
     intro: {
       eyebrow: "What kind of place",
-      title: "A village corner, not a postcard",
+      title: "A piece of Gardone, not a postcard",
       body: [
-        "We are in the historic centre of Gardone Riviera, in one of the most charming places on Lake Garda. Just a few metres from the Vittoriale degli Italiani, in Piazza dei Caduti, you will find our trattoria.",
-        "Adria sits on a cobbled crossroads in Gardone Sopra: yellow facade, geraniums on the windowsills, the arch with TRATTORIA written across it that you spot from down the street. Inside, it is home cooking — checked tablecloths, full plates, people dropping in just for a coffee.",
-        "It is a trattoria, a pizzeria and a bar at the same address. Visitors on their way to the Vittoriale stop here before or after; locals come back on a Wednesday evening without thinking about it.",
+        "We are in the old centre of Gardone Riviera, a few metres from the Vittoriale, on Piazza dei Caduti. You spot Adria from down the street: yellow façade, geraniums at the windows, the arch that reads TRATTORIA.",
+        "Inside it feels like home: checked tablecloths, honest plates, people who stay for lunch and people who drop in just for a coffee. Trattoria, pizzeria and bar at the same address. Visitors heading to the Vittoriale stop here before or after. Locals come back on a Wednesday evening without thinking twice.",
       ],
     },
     lake: {
@@ -285,10 +283,10 @@ export const copy: Record<Lang, Copy> = {
     dishes: {
       eyebrow: "In the kitchen",
       title: "A few things, done properly",
-      body: "The card is long because this is a village place and everyone should find their dish: house pasta, fried calamari, seasonal vegetables off the grill and an ice cream sundae.",
+      body: "The menu is that of a little town place: everyone should find their dish. House pasta, fried calamari, garden vegetables off the grill, a house sundae to finish. No staging. Trattoria classics, nothing extra.",
       cta: "Read the full menu",
       captions: {
-        carbonara: "House pasta, best enjoyed with a glass of wine",
+        carbonara: "House pasta, with a glass of wine",
         gnocchetti: "Fried calamari with lemon",
         verdure: "Grilled seasonal vegetables",
         tiramisu: "House ice cream sundae",
@@ -296,18 +294,18 @@ export const copy: Record<Lang, Copy> = {
     },
     pause: {
       eyebrow: "Dessert and coffee",
-      title: "The pleasure of lingering",
-      body: "A slice of jam tart, a coffee and a few more minutes at the table. A simple moment, just as it should be in a trattoria.",
+      title: "The pleasure of not getting up just yet",
+      body: "A slice of jam tart, a coffee, five more minutes at the table. The simplest moment in a trattoria — and often the best.",
     },
     pizza: {
       eyebrow: "Pizzeria",
       title: "Late in the evening, even just a margherita",
-      body: "Classic dough, oven lit every evening: from a 6-euro marinara to the Lazio with guanciale and pecorino romano DOP. The signature pizzas carry the names of Italian regions; the D'Annunzio, with zucchini cream and cherry tomatoes, carries the name of the most famous neighbour.",
+      body: "Classic dough, oven on every night. From a €6 marinara to the Lazio with guanciale and pecorino romano DOP. The specials take their names from Italian regions; the D’Annunzio — courgette cream and cherry tomatoes — from the most famous neighbour.",
     },
     visit: {
       eyebrow: "Booking",
-      title: "A table is held with a phone call",
-      body: "No forms needed: call us, tell us how many you are and at what time. If we are full we will tell you straight away when there is space.",
+      title: "A table is held with a phone call. Or a message.",
+      body: "No forms. Tell us how many you are and what time. If we are full, we will say straight away when there is a table.",
       addressLabel: "Address",
       phoneLabel: "Phone",
       hoursLabel: "Opening hours",
@@ -316,7 +314,7 @@ export const copy: Record<Lang, Copy> = {
     },
     menuPage: {
       title: "The menu",
-      lead: "The full menu of the trattoria, the pizzeria and the bar. Prices and descriptions match the printed card on the table.",
+      lead: "The full menu of the trattoria, pizzeria and bar. Prices and descriptions match the card on the table.",
       search: "Search",
       searchPlaceholder: "Search a dish, an ingredient…",
       filters: "Filter",
@@ -324,9 +322,9 @@ export const copy: Record<Lang, Copy> = {
       noResults: "No dish matches your search.",
       allergensTitle: "Allergens",
       allergensNote:
-        "Numbers in brackets list the allergens present. For any intolerance, please talk to us in the dining room.",
+        "Numbers in brackets mark allergens. If you have an intolerance, just tell us in the dining room.",
       frozenNote:
-        "Some fish products may be blast-chilled or frozen at origin, depending on availability.",
+        "Some fish and seafood may have been frozen at source, depending on availability.",
       downloadPdf: "Download the menu as PDF",
     },
     placePage: {
@@ -400,17 +398,16 @@ export const copy: Record<Lang, Copy> = {
     hero: {
       place: "Gardone Riviera · Gardasee",
       title: "Trattoria Adria",
-      lead: "Trattoria, Pizzeria und Bar unter den gelben Bögen der Via Caduti, wenige Schritte vom Vittoriale degli Italiani entfernt.",
+      lead: "Unter den gelben Bögen der Via Caduti, wenige Schritte vom Vittoriale: Trattoria, Pizzeria und Bar, wie im Dorf.",
       since: "da Kevin",
       scroll: "Scrollen",
     },
     intro: {
       eyebrow: "Was für ein Ort",
-      title: "Eine Dorfecke, keine Postkarte",
+      title: "Ein Stück Gardone, keine Postkarte",
       body: [
-        "Wir befinden uns im historischen Zentrum von Gardone Riviera, an einem der schönsten Orte am Gardasee. Nur wenige Meter vom Vittoriale degli Italiani entfernt finden Sie unsere Trattoria an der Piazza dei Caduti.",
-        "Das Adria steht an einer Kopfsteinpflaster-Kreuzung in Gardone Sopra: gelbe Fassade, Geranien an den Fenstern, der Bogen mit dem Schriftzug TRATTORIA, den man schon von weitem sieht. Drinnen wird gekocht wie zu Hause: karierte Tischdecken, volle Teller, Gäste, die nur auf einen Kaffee hereinschauen.",
-        "Trattoria, Pizzeria und Bar unter derselben Adresse. Wer zum Vittoriale hinaufgeht, kehrt hier davor oder danach ein; wer in Gardone lebt, kommt am Mittwochabend ganz selbstverständlich wieder.",
+        "Wir sind im historischen Zentrum von Gardone Riviera, wenige Meter vom Vittoriale entfernt, an der Piazza dei Caduti. Das Adria erkennt man von weitem: gelbe Fassade, Geranien an den Fenstern, der Bogen mit dem Schriftzug TRATTORIA.",
+        "Drinnen isst man wie zu Hause: karierte Tischdecken, ehrliche Teller, Gäste zum Mittagessen und Gäste nur auf einen Kaffee. Trattoria, Pizzeria und Bar unter derselben Adresse. Wer zum Vittoriale hinaufgeht, kehrt davor oder danach ein. Wer in Gardone lebt, kommt am Mittwochabend ganz selbstverständlich wieder.",
       ],
     },
     lake: {
@@ -425,7 +422,7 @@ export const copy: Record<Lang, Copy> = {
     dishes: {
       eyebrow: "Aus der Küche",
       title: "Wenige Dinge, richtig gemacht",
-      body: "Die Karte ist lang, weil dies ein Dorflokal ist und jede und jeder das Passende finden soll: hausgemachte Pasta, frittierte Calamari, Gemüse der Saison vom Grill und ein Eisbecher.",
+      body: "Die Karte ist die eines Dorflokals: jede und jeder soll das Passende finden. Hausgemachte Pasta, frittierte Calamari, Gemüse vom Grill, zum Schluss ein Eisbecher. Keine Inszenierung. Klassiker der Trattoria, ohne Schnörkel.",
       cta: "Ganze Speisekarte lesen",
       captions: {
         carbonara: "Hausgemachte Pasta, dazu ein Glas Wein",
@@ -436,18 +433,18 @@ export const copy: Record<Lang, Copy> = {
     },
     pause: {
       eyebrow: "Dolce und Kaffee",
-      title: "Die Freude, noch ein wenig zu bleiben",
-      body: "Ein Stück Marmeladenkuchen, ein Kaffee und noch ein paar Minuten am Tisch. Ein einfacher Moment, wie er in eine Trattoria gehört.",
+      title: "Die Freude, noch nicht aufzustehen",
+      body: "Ein Stück Marmeladenkuchen, ein Kaffee, noch fünf Minuten am Tisch. Der einfachste Moment in einer Trattoria — und oft der schönste.",
     },
     pizza: {
       eyebrow: "Pizzeria",
       title: "Auch spätabends, auch nur eine Margherita",
-      body: "Klassischer Teig, jeden Abend heißer Ofen: von der Marinara für 6 Euro bis zur Lazio mit Guanciale und Pecorino Romano DOP. Die Spezial-Pizzen tragen Namen italienischer Regionen; die D'Annunzio, mit Zucchini-Creme und Kirschtomaten, den des berühmtesten Nachbarn.",
+      body: "Klassischer Teig, jeden Abend heißer Ofen. Von der Marinara für 6 Euro bis zur Lazio mit Guanciale und Pecorino Romano DOP. Die Spezial-Pizzen tragen Namen italienischer Regionen; die D’Annunzio — Zucchinicreme und Kirschtomaten — den des berühmtesten Nachbarn.",
     },
     visit: {
       eyebrow: "Reservieren",
-      title: "Ein Tisch wird mit einem Anruf gehalten",
-      body: "Kein Formular nötig: Rufen Sie an, sagen Sie uns, wie viele Sie sind und um wie viel Uhr. Wenn es voll ist, sagen wir sofort, wann wieder Platz ist.",
+      title: "Ein Tisch wird mit einem Anruf gehalten. Oder einer Nachricht.",
+      body: "Kein Formular. Sagen Sie uns, wie viele Sie sind und um wie viel Uhr. Wenn es voll ist, sagen wir sofort, wann wieder Platz ist.",
       addressLabel: "Adresse",
       phoneLabel: "Telefon",
       hoursLabel: "Öffnungszeiten",
@@ -456,7 +453,7 @@ export const copy: Record<Lang, Copy> = {
     },
     menuPage: {
       title: "Die Speisekarte",
-      lead: "Die vollständige Karte von Trattoria, Pizzeria und Bar. Preise und Beschreibungen entsprechen der gedruckten Karte am Tisch.",
+      lead: "Die Karte der Trattoria, der Pizzeria und der Bar. Preise und Beschreibungen entsprechen der Karte auf dem Tisch.",
       search: "Suchen",
       searchPlaceholder: "Gericht oder Zutat suchen…",
       filters: "Filtern",
@@ -464,9 +461,9 @@ export const copy: Record<Lang, Copy> = {
       noResults: "Kein Gericht passt zur Suche.",
       allergensTitle: "Allergene",
       allergensNote:
-        "Die Zahlen in Klammern nennen die enthaltenen Allergene. Bei Unverträglichkeiten sprechen Sie uns bitte im Lokal an.",
+        "Die Zahlen in Klammern stehen für Allergene. Bei Unverträglichkeiten einfach im Saal Bescheid sagen.",
       frozenNote:
-        "Einzelne Fischprodukte können je nach Verfügbarkeit schockgefrostet oder tiefgekühlt sein.",
+        "Einige Fisch- und Meeresfrüchteprodukte können je nach Verfügbarkeit tiefgekühlt sein.",
       downloadPdf: "Speisekarte als PDF laden",
     },
     placePage: {

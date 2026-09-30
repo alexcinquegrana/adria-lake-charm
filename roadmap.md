@@ -3,3 +3,4 @@
 - [x] Integrare il nuovo video, le quattro foto e aggiornare testi e distanze
 - [x] Nuovo logo storico "with love ADRIA" in navbar, footer, icona sito
 - [x] Foto ingresso e piazza con archi nella sezione Il locale
+- [x] Armonizzare i testi approvati dal cliente in italiano, inglese e tedesco
