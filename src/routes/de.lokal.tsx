@@ -4,6 +4,7 @@ import { PlacePage } from "@/components/PlacePage";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/de/lokal")({
+  staticData: { sitemap: true },
   head: () => pageHead("de", "place"),
   component: () => (
     <SiteLayout lang="de" page="place">

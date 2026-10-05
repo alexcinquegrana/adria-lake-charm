@@ -97,7 +97,6 @@ interface Copy {
     blocks: { title: string; body: string }[];
     galleryTitle: string;
     storyTitle: string;
-    storyBody: string;
   };
   contactPage: {
     title: string;
@@ -207,8 +206,6 @@ export const copy: Record<Lang, Copy> = {
       ],
       galleryTitle: "Il locale e la tavola",
       storyTitle: "La storia",
-      storyBody:
-        "Questa pagina è pronta per raccontare la storia dell'Adria e di Kevin: chi c'era prima, come è nata la cucina, cosa non è mai cambiato. Mandaci il racconto e lo mettiamo qui, con le vostre parole.",
     },
     contactPage: {
       title: "Dove siamo",
@@ -346,8 +343,6 @@ export const copy: Record<Lang, Copy> = {
       ],
       galleryTitle: "The room and the table",
       storyTitle: "The story",
-      storyBody:
-        "This page is ready for the story of Adria and Kevin: who was here before, how the kitchen came to be, what never changed. Send us the story and it goes here, in your own words.",
     },
     contactPage: {
       title: "Find us",
@@ -485,8 +480,6 @@ export const copy: Record<Lang, Copy> = {
       ],
       galleryTitle: "Der Raum und der Tisch",
       storyTitle: "Die Geschichte",
-      storyBody:
-        "Diese Seite ist bereit für die Geschichte des Adria und von Kevin: wer vorher hier war, wie die Küche entstand, was nie anders wurde. Schicken Sie uns den Text, wir setzen ihn hierher — in Ihren Worten.",
     },
     contactPage: {
       title: "Anfahrt",

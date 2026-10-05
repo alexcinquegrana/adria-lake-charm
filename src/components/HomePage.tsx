@@ -139,6 +139,7 @@ export function HomePage({ lang }: { lang: Lang }) {
             </p>
             <h1 className="mt-3 font-display text-5xl leading-[0.95] drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] sm:text-7xl">
               {c.hero.title}
+              <span className="sr-only">{heroDescriptor[lang]}</span>
             </h1>
             <p className="mt-3 font-display text-lg text-primary drop-shadow-[0_1px_6px_rgba(0,0,0,0.4)] sm:text-xl">
               {c.hero.since}
@@ -345,3 +346,9 @@ export function HomePage({ lang }: { lang: Lang }) {
     </>
   );
 }
+
+const heroDescriptor: Record<Lang, string> = {
+  it: " — trattoria, pizzeria e bar a Gardone Riviera, Lago di Garda",
+  en: " — trattoria, pizzeria and bar in Gardone Riviera, Lake Garda",
+  de: " — Trattoria, Pizzeria und Bar in Gardone Riviera, Gardasee",
+};

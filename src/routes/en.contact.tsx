@@ -4,6 +4,7 @@ import { ContactPage } from "@/components/ContactPage";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/en/contact")({
+  staticData: { sitemap: true },
   head: () => pageHead("en", "contact"),
   component: () => (
     <SiteLayout lang="en" page="contact">

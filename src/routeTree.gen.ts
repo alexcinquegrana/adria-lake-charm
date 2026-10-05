@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContattiRouteImport } from './routes/contatti'
 import { Route as IlLocaleRouteImport } from './routes/il-locale'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as DeIndexRouteImport } from './routes/de.index'
 import { Route as DeKontaktRouteImport } from './routes/de.kontakt'
 import { Route as DeLokalRouteImport } from './routes/de.lokal'
@@ -40,6 +41,11 @@ const IlLocaleRoute = IlLocaleRouteImport.update({
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeIndexRoute = DeIndexRouteImport.update({
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/contatti': typeof ContattiRoute
   '/il-locale': typeof IlLocaleRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/de/kontakt': typeof DeKontaktRoute
   '/de/lokal': typeof DeLokalRoute
   '/de/speisekarte': typeof DeSpeisekarteRoute
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/contatti': typeof ContattiRoute
   '/il-locale': typeof IlLocaleRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/de/kontakt': typeof DeKontaktRoute
   '/de/lokal': typeof DeLokalRoute
   '/de/speisekarte': typeof DeSpeisekarteRoute
@@ -117,6 +125,7 @@ export interface FileRoutesById {
   '/contatti': typeof ContattiRoute
   '/il-locale': typeof IlLocaleRoute
   '/menu': typeof MenuRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/de/kontakt': typeof DeKontaktRoute
   '/de/lokal': typeof DeLokalRoute
   '/de/speisekarte': typeof DeSpeisekarteRoute
@@ -133,6 +142,7 @@ export interface FileRouteTypes {
     | '/contatti'
     | '/il-locale'
     | '/menu'
+    | '/sitemap.xml'
     | '/de/kontakt'
     | '/de/lokal'
     | '/de/speisekarte'
@@ -147,6 +157,7 @@ export interface FileRouteTypes {
     | '/contatti'
     | '/il-locale'
     | '/menu'
+    | '/sitemap.xml'
     | '/de/kontakt'
     | '/de/lokal'
     | '/de/speisekarte'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/contatti'
     | '/il-locale'
     | '/menu'
+    | '/sitemap.xml'
     | '/de/kontakt'
     | '/de/lokal'
     | '/de/speisekarte'
@@ -176,6 +188,7 @@ export interface RootRouteChildren {
   ContattiRoute: typeof ContattiRoute
   IlLocaleRoute: typeof IlLocaleRoute
   MenuRoute: typeof MenuRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   DeKontaktRoute: typeof DeKontaktRoute
   DeLokalRoute: typeof DeLokalRoute
   DeSpeisekarteRoute: typeof DeSpeisekarteRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/de/': {
@@ -280,6 +300,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContattiRoute: ContattiRoute,
   IlLocaleRoute: IlLocaleRoute,
   MenuRoute: MenuRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   DeKontaktRoute: DeKontaktRoute,
   DeLokalRoute: DeLokalRoute,
   DeSpeisekarteRoute: DeSpeisekarteRoute,
