@@ -78,7 +78,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Trattoria Adria da Kevin — Gardone Riviera, Lago di Garda" },
       { name: "author", content: "Trattoria Adria da Kevin" },
       { name: "theme-color", content: "#7a1f1a" },
     ],
