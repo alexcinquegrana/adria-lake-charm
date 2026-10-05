@@ -4,8 +4,9 @@ import type { Lang } from "@/content/menu";
 import { copy, paths, restaurant, whatsappHref } from "@/content/site";
 import { Reveal } from "./Reveal";
 import { Logo } from "./Logo";
-import facciata from "@/assets/facciata.jpg.asset.json";
+import heroPoster from "@/assets/adria-hero-poster.jpg.asset.json";
 import heroVideo from "@/assets/adria-hero.mp4.asset.json";
+import heroVideoMobile from "@/assets/adria-hero-mobile.mp4.asset.json";
 import salaEsterno from "@/assets/sala-esterno.jpeg.asset.json";
 import pastaVino from "@/assets/pasta-vino.jpeg.asset.json";
 import frittoCalamari from "@/assets/fritto-calamari.jpeg.asset.json";
@@ -28,6 +29,40 @@ export function HomePage({ lang }: { lang: Lang }) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Ensure the hero video actually plays: some browsers skip autoplay on
+  // first load, after returning to the tab, or after a stalled download.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const tryPlay = () => {
+      if (v.paused) v.play().catch(() => {});
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+    const onError = () => {
+      // Retry once by reloading the sources.
+      v.load();
+      tryPlay();
+    };
+    tryPlay();
+    v.addEventListener("canplay", tryPlay);
+    v.addEventListener("stalled", tryPlay);
+    v.addEventListener("error", onError, { once: true });
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+    window.addEventListener("scroll", tryPlay, { once: true, passive: true });
+    return () => {
+      v.removeEventListener("canplay", tryPlay);
+      v.removeEventListener("stalled", tryPlay);
+      v.removeEventListener("error", onError);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("touchstart", tryPlay);
+      window.removeEventListener("scroll", tryPlay);
+    };
   }, []);
 
   // Mobile only: pan the hero crop from the trattoria (left) to full center
@@ -77,16 +112,19 @@ export function HomePage({ lang }: { lang: Lang }) {
       <section className="sticky top-0 isolate overflow-hidden">
         <video
           ref={videoRef}
-          src={heroVideo.url}
-          poster={facciata.url}
+          poster={heroPoster.url}
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
           aria-label={`${restaurant.name}, ${restaurant.street}, ${restaurant.city}`}
-          className="h-[100svh] min-h-[560px] w-full object-cover"
+          className="h-[100svh] min-h-[560px] w-full bg-ink object-cover"
           style={{ objectPosition: `${panX}% 50%` }}
-        />
+        >
+          <source src={heroVideoMobile.url} type="video/mp4" media="(max-width: 1023px)" />
+          <source src={heroVideo.url} type="video/mp4" />
+        </video>
 
         <div
           aria-hidden={veil < 0.05}
