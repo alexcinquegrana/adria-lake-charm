@@ -160,7 +160,7 @@ export const copy: Record<Lang, Copy> = {
     pizza: {
       eyebrow: "Pizzeria",
       title: "Anche la sera tardi, anche solo una margherita",
-      body: "Forno acceso tutte le sere, impasto classico. Dalla marinara a 6 euro alla Lazio con guanciale e pecorino romano DOP. Le speciali portano il nome delle regioni; la D’Annunzio — crema di zucchine e pomodorini — quello del vicino di casa più illustre.",
+      body: "Forno acceso a pranzo e a cena, impasto classico. Dalla marinara a 6 euro alla Lazio con guanciale e pecorino romano DOP. Le speciali portano il nome delle regioni; la D’Annunzio — crema di zucchine e pomodorini — quello del vicino di casa più illustre.",
     },
     visit: {
       eyebrow: "Prenotare",
@@ -197,7 +197,7 @@ export const copy: Record<Lang, Copy> = {
         },
         {
           title: "La pizzeria",
-          body: "Forno acceso tutte le sere. Pizze classiche, speciali dedicate alle regioni italiane, calzoni e puccia — il panpizza servito con le patatine.",
+          body: "Forno acceso a pranzo e a cena. Pizze classiche, speciali dedicate alle regioni italiane, calzoni e puccia — il panpizza servito con le patatine.",
         },
         {
           title: "Il bar",
@@ -297,7 +297,7 @@ export const copy: Record<Lang, Copy> = {
     pizza: {
       eyebrow: "Pizzeria",
       title: "Late in the evening, even just a margherita",
-      body: "Classic dough, oven on every night. From a €6 marinara to the Lazio with guanciale and pecorino romano DOP. The specials take their names from Italian regions; the D’Annunzio — courgette cream and cherry tomatoes — from the most famous neighbour.",
+      body: "Classic dough, oven on for lunch and dinner. From a €6 marinara to the Lazio with guanciale and pecorino romano DOP. The specials take their names from Italian regions; the D’Annunzio — courgette cream and cherry tomatoes — from the most famous neighbour.",
     },
     visit: {
       eyebrow: "Booking",
@@ -334,7 +334,7 @@ export const copy: Record<Lang, Copy> = {
         },
         {
           title: "The pizzeria",
-          body: "The oven is lit every evening. Classic pizzas, signature ones named after Italian regions, calzoni and puccia — pizza bread served with fries.",
+          body: "The oven is lit for lunch and dinner. Classic pizzas, signature ones named after Italian regions, calzoni and puccia — pizza bread served with fries.",
         },
         {
           title: "The bar",
@@ -434,7 +434,7 @@ export const copy: Record<Lang, Copy> = {
     pizza: {
       eyebrow: "Pizzeria",
       title: "Auch spätabends, auch nur eine Margherita",
-      body: "Klassischer Teig, jeden Abend heißer Ofen. Von der Marinara für 6 Euro bis zur Lazio mit Guanciale und Pecorino Romano DOP. Die Spezial-Pizzen tragen Namen italienischer Regionen; die D’Annunzio — Zucchinicreme und Kirschtomaten — den des berühmtesten Nachbarn.",
+      body: "Klassischer Teig, mittags und abends heißer Ofen. Von der Marinara für 6 Euro bis zur Lazio mit Guanciale und Pecorino Romano DOP. Die Spezial-Pizzen tragen Namen italienischer Regionen; die D’Annunzio — Zucchinicreme und Kirschtomaten — den des berühmtesten Nachbarn.",
     },
     visit: {
       eyebrow: "Reservieren",
@@ -471,7 +471,7 @@ export const copy: Record<Lang, Copy> = {
         },
         {
           title: "Die Pizzeria",
-          body: "Der Ofen brennt jeden Abend. Klassische Pizzen, Spezialitäten mit Namen italienischer Regionen, Calzoni und Puccia — Pizzabrot mit Pommes.",
+          body: "Der Ofen brennt mittags und abends. Klassische Pizzen, Spezialitäten mit Namen italienischer Regionen, Calzoni und Puccia — Pizzabrot mit Pommes.",
         },
         {
           title: "Die Bar",
